@@ -127,7 +127,8 @@ public class BPMNDecorateUtil {
 					MapActivity.put(activity, text);
 				}
 			} else {
-				if (t.getLabel().endsWith("_join")) {
+				//t.getLabel().endsWith("_join")
+				if (t.getGraph().getInEdges(t).size()>1) {
 
 					// controlla la presenza di sync time e inserisce il souj
 					// per ogni ramo parallelo
@@ -235,7 +236,8 @@ public class BPMNDecorateUtil {
 			PetrinetNode sourcenode = flow.getSource();
 			if (sourcenode instanceof Transition) {
 				Transition source = (Transition) flow.getSource();
-				if (source.getLabel().endsWith("_join")) {
+				//source.getLabel().endsWith("_join")
+				if (source.getGraph().getInEdges(source).size()>1) {
 					// prendo solo un ramo ora devo non mi devo fermare al primo
 					// fork che incontro ma al successivo
 					PetrinetNode newsource = source.getGraph()
@@ -243,7 +245,9 @@ public class BPMNDecorateUtil {
 					recursiveaddsoujourtime(soujour, performanceresult,
 							newsource, i++);
 				} else {
-					if (!source.getLabel().endsWith("_fork")) {
+					//!source.getLabel().endsWith("_fork")
+					
+					if (source.getGraph().getOutEdges(source).size()==1) {
 						recursiveaddsoujourtime(soujour, performanceresult,
 								source, i);
 					} else {
@@ -320,7 +324,8 @@ public class BPMNDecorateUtil {
 
 			}
 			ArchiAttivatiBPMN.put(p.getLabel(), att);
-
+			
+		
 		}
 
 		Map<Activity,Artifacts> mapActiArtic = new HashMap<Activity, Artifacts>();
@@ -398,26 +403,26 @@ public class BPMNDecorateUtil {
 
 			}
 
+			
+			
 		
 			// cerco la transizione del fork
-			if (t.getLabel().endsWith("_fork")) {
+			//t.getLabel().endsWith("_fork")
+			
+			if (t.getGraph().getOutEdges(t).size()>1) {
 				Collection<PetrinetEdge<? extends PetrinetNode, ? extends PetrinetNode>> p = t
 				.getGraph().getOutEdges(t);
-				Vector<String> targ = new Vector<String>();
+				
 				for (PetrinetEdge<? extends PetrinetNode, ? extends PetrinetNode> e : p) {
 					Place target = (Place) e.getTarget();
-					targ.add(target.getLabel());
-				}
-				for (String placename : targ) {
-					for (Place place : remaning.baseSet()) {
-						if (place.getLabel().equals(placename)) {
-							System.out.println(ret + " Fork internal failures");
-							archibpmnwitherrorconformance.put(place.getLabel(),
+					if(remaning.contains(target)){
+						System.out.println(ret + " Fork internal failures");
+							archibpmnwitherrorconformance.put(target.getLabel(),
 							" Fork internal failures");
-						}
-
 					}
+					
 				}
+				
 			}
 		}
 		// metto gli attraversamenti sugli archi bpmn
