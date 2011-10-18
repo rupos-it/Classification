@@ -12,3 +12,7 @@ prom5_log_files
 PetriNetReplayAnalysis/dist/
 
 BPMNMeasures/dist/
+
+examples
+prom61_origin
+rupos_context

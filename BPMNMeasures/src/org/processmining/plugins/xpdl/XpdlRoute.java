@@ -152,9 +152,6 @@ public class XpdlRoute extends XpdlElement {
 		GatewayType type = GatewayType.DATABASED;
 		if (gatewayType != null) {
 			if (gatewayType.equalsIgnoreCase("XOR")|| gatewayType.equalsIgnoreCase("Exclusive")) {
-				/*if ((instantiate != null) && (instantiate.equalsIgnoreCase("true"))) {
-					type = GatewayType.EVENTBASED;
-				}*/
 				if(exclusiveType!=null){
 					if (exclusiveType.equalsIgnoreCase("Event")) {
 						type = GatewayType.EVENTBASED;
@@ -163,10 +160,10 @@ public class XpdlRoute extends XpdlElement {
 					}
 				}
 				if(xorType!=null){
-				if(xorType.equalsIgnoreCase("Event")){
-					type = GatewayType.EVENTBASED;
+					if(xorType.equalsIgnoreCase("Event")){
+						type = GatewayType.EVENTBASED;
 					}else if(xorType.equalsIgnoreCase("DATA")){
-					type = GatewayType.DATABASED;
+						type = GatewayType.DATABASED;
 					}
 				}
 			} else if (gatewayType.equalsIgnoreCase("AND")|| gatewayType.equalsIgnoreCase("Parallel")) {
