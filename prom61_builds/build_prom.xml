@@ -107,7 +107,7 @@
 
 
 	<!-- clean all binaries and distributions -->
-	<target name="Clean build and dist folders" description="clean up" id="1">
+	<target name="clean" description="clean up" id="1">
 		<!-- Delete the ${build} and ${dist} directory trees -->
 		<delete dir="${build}" />
 		<delete dir="${dist}" />
@@ -288,7 +288,7 @@
 		<copytocurrent module="Framework" />
 	</target>
 
-	<target name="nightlyBuild" depends="Clean build and dist folders,compile-plugins,Create ProM Javadoc">
+	<target name="nightlyBuild" depends="clean,compile-plugins,Create ProM Javadoc">
 		<echo message="Performing nightly build (${DSTAMP}) for Java 1.6" />
 		<buildBinaryArchive name="ProM-nightly-${DSTAMP}-1.6" />
 		<sequential>
