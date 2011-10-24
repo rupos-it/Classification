@@ -8,6 +8,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Collection;
 import java.util.Map;
 
 
@@ -69,7 +70,7 @@ public class BPMNMeasuresPanelPerformance extends JPanel {
 
 	private Petrinet net;
 
-	private Map<String, Place> placeMap;
+	private Collection< Place> placeFlowCollection;
 
 	private TabTracePerfPanel tabinteractivepanel;
 	private BPMNDiagram bpmn;
@@ -94,9 +95,9 @@ public class BPMNMeasuresPanelPerformance extends JPanel {
 			// connection found. Create all necessary component to instantiate inactive visualization panel
 			
 		    bpmn = connection2.getObjectWithRole(BPMNtoPNConnection.BPMN);
-		    placeMap = connection2.getObjectWithRole(BPMNtoPNConnection.MAPARCTOPLACE);
+		    placeFlowCollection = connection2.getObjectWithRole(BPMNtoPNConnection.PLACEFLOWCONNECTION);
 			
-		    bpmnvisulizated = BPMNDecorateUtil.exportPerformancetoBPMN(bpmn,  resultc.getListperformance().get(0), placeMap,net);
+		    bpmnvisulizated = BPMNDecorateUtil.exportPerformancetoBPMN(bpmn,  resultc.getListperformance().get(0), placeFlowCollection,net);
 			
 			 
 				
@@ -191,7 +192,7 @@ public class BPMNMeasuresPanelPerformance extends JPanel {
 		Petrinet netx = PetrinetFactory.clonePetrinet(net);
 		
 		PetriNetDrawUtil.drawperformancenet(netx, performanceResult.getList(), performanceResult.getMaparc());
-		bpmnvisulizated =	BPMNDecorateUtil.exportPerformancetoBPMN(bpmn, performanceResult,placeMap,net);
+		bpmnvisulizated =	BPMNDecorateUtil.exportPerformancetoBPMN(bpmn, performanceResult,placeFlowCollection,net);
 		
 		remove(netPNView);
 		remove(netBPMNView);

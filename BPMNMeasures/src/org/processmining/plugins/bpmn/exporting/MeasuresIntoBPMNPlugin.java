@@ -3,6 +3,7 @@ package org.processmining.plugins.bpmn.exporting;
 
 
 
+import java.util.Collection;
 import java.util.Map;
 
 
@@ -53,9 +54,9 @@ import org.processmining.plugins.petrinet.replay.util.ReplayAnalysisConnection;
 			// connection found. Create all necessary component to instantiate inactive visualization panel
 			
 		    BPMNDiagram bpmn = connection2.getObjectWithRole(BPMNtoPNConnection.BPMN);
-		    Map<String,Place> placeMap = connection2.getObjectWithRole(BPMNtoPNConnection.MAPARCTOPLACE);
+		    Collection<Place> placeFlowCollection = connection2.getObjectWithRole(BPMNtoPNConnection.PLACEFLOWCONNECTION);
 			
-			bpmnext = BPMNDecorateUtil.exportConformancetoBPMN(bpmn, net, totalconformanceresult.getTotal(), placeMap);
+			bpmnext = BPMNDecorateUtil.exportConformancetoBPMN(bpmn, net, totalconformanceresult.getTotal(), placeFlowCollection);
 			
 
 
@@ -88,9 +89,9 @@ import org.processmining.plugins.petrinet.replay.util.ReplayAnalysisConnection;
 			// connection found. Create all necessary component to instantiate inactive visualization panel
 			
 		    BPMNDiagram bpmn = connection2.getObjectWithRole(BPMNtoPNConnection.BPMN);
-		    Map<String,Place> placeMap = connection2.getObjectWithRole(BPMNtoPNConnection.MAPARCTOPLACE);
+		    Collection<Place> placeFlowCollection = connection2.getObjectWithRole(BPMNtoPNConnection.PLACEFLOWCONNECTION);
 			
-			bpmnext = BPMNDecorateUtil.exportConformancetoBPMN(bpmn, net, conformanceresult, placeMap);
+			bpmnext = BPMNDecorateUtil.exportConformancetoBPMN(bpmn, net, conformanceresult, placeFlowCollection);
 			
 
 
@@ -123,10 +124,10 @@ import org.processmining.plugins.petrinet.replay.util.ReplayAnalysisConnection;
 			// connection found. Create all necessary component to instantiate inactive visualization panel
 			
 		   BPMNDiagram bpmn = connection2.getObjectWithRole(BPMNtoPNConnection.BPMN);
-		   Map<String, Place>  placeMap = connection2.getObjectWithRole(BPMNtoPNConnection.MAPARCTOPLACE);
+		   Collection< Place>  placeFlowCollection = connection2.getObjectWithRole(BPMNtoPNConnection.PLACEFLOWCONNECTION);
 			
 		   //cambiare con total
-		   return BPMNDecorateUtil.exportPerformancetoBPMN(bpmn,  totalPerformanceresult.getListperformance().get(0), placeMap,net);
+		   return BPMNDecorateUtil.exportPerformancetoBPMN(bpmn,  totalPerformanceresult.getListperformance().get(0), placeFlowCollection,net);
 			
 			 
 
@@ -152,10 +153,10 @@ import org.processmining.plugins.petrinet.replay.util.ReplayAnalysisConnection;
 			// connection found. Create all necessary component to instantiate inactive visualization panel
 			
 		   BPMNDiagram bpmn = connection2.getObjectWithRole(BPMNtoPNConnection.BPMN);
-		   Map<String, Place>  placeMap = connection2.getObjectWithRole(BPMNtoPNConnection.MAPARCTOPLACE);
+		  Collection< Place>  placeFlowCollection = connection2.getObjectWithRole(BPMNtoPNConnection.PLACEFLOWCONNECTION);
 			
 		   
-		   return BPMNDecorateUtil.exportPerformancetoBPMN(bpmn,  Performanceresult, placeMap,net);
+		   return BPMNDecorateUtil.exportPerformancetoBPMN(bpmn,  Performanceresult, placeFlowCollection,net);
 			
 			 
 
