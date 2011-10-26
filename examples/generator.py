@@ -17,7 +17,6 @@ def formatAttr(key, value):
         typeRepr = "LITERAL"
     #TIMESTAMP: Attributes with timestamp type encode the UNIX timestamp (e.g., milliseconds since 01/01/1970) they represent, in the same form as discrete attributes.
     #DURATION: Attributes with duration type encode their values in milliseconds, in the same form as discrete attributes.
-
     return """
      <attribute key="%s" value="%s" type="%s"/>
     """ % (key, valueRepr, typeRepr)
@@ -220,7 +219,8 @@ def gen_log(i):
 """ % (i, gen_sequence(t))
 
 
-print("""<log xes.version="1.0" xes.features="nested-attributes" openxes.version="1.0RC7" xmlns="http://www.xes-standard.org/">
+print("""<?xml version="1.0" encoding="UTF-8" ?>
+        <log xes.version="1.0" xes.features="nested-attributes" openxes.version="1.0RC7" xmlns="http://www.xes-standard.org/">
 	<extension name="Lifecycle" prefix="lifecycle" uri="http://www.xes-standard.org/lifecycle.xesext"/>
 	<extension name="Organizational" prefix="org" uri="http://www.xes-standard.org/org.xesext"/>
 	<extension name="Time" prefix="time" uri="http://www.xes-standard.org/time.xesext"/>
@@ -246,7 +246,6 @@ for i in range(500):
     print(gen_log(i))
 
 print("""
-	</trace>
 </log>
 """)
 
