@@ -131,7 +131,7 @@ def requestHook(t, attrs):
 def carHook(t, attrs):
     t0, t1, data = defaultHook(t, attrs)
     if attrs["dest"] == "Italy":
-        t1 += 0
+        t1 += attrs
     elif attrs["dest"] == "Spain" or attrs["dest"] == "USA":
         t1 += random.randint(1, 60 * 60)
     else:
@@ -158,8 +158,8 @@ def choiceHook(l, attrs):
     return l[0]
 
 def notifyHook(t, attrs):
-    Urgente = ["Yes", "No"]
-    urg = Urgente[random.randint(0, len(Urgente)-1)]
+    urgenza = ["true", "false"]
+    urg = urgenza[random.randint(0, len(urgenza)-1)]
     attrs["urg"] = urg
 
 
@@ -171,14 +171,12 @@ def notifyHook(t, attrs):
     """%(attr, attrs[attr])
     return t0,t1,data
 
-def choiceHook(l, attrs):
-    if  attrs["urg"] == "Yes":
+def sceltaHook(l, attrs):
+    if  attrs["urg"] == "true":
         return l[1]
     return l[0]
 
 	
-
-
 #def gen_sequence(t):
  #   acts = Sequence([
  #           Entry("StartRequest", requestHook),
@@ -207,12 +205,13 @@ def gen_sequence(t):
 	acts = Sequence([ Entry("NotifyBug", notifyHook),
 			Choice([
 		     		Sequence([ Entry("CheckBug"),
-					   Entry("FixBug" )
-			     ]),
-		     	Entry("FixBug")
-    		], sceltaHook)	     
-	
-	return acts.gen(t,{})[0]	     
+					   Entry("FixBug" ) ]),
+			     		
+		     		Entry("FixBug")
+    				], sceltaHook)	    
+			]) 
+
+        return acts.gen(t, {})[0]
 
 
 def gen_log(i):
