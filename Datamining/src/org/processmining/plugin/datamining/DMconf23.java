@@ -127,8 +127,11 @@ public class DMconf23 {
 		  file.write("@relation BugFix\n");
 		  file.write("\n");
 		  
+		  List<String> attrNames = new Vector<String>();
+		  attrNames.addAll(Attributi.keySet());
+		  
 		  //Gli attributi 
-		  for( String att: Attributi.keySet()){
+		  for( String att: attrNames){
 			  file.write("@attribute " + att + " {");
 			  List<String> valori = Attributi.get(att);
 			  for(int i=0; i<valori.size() - 1; i++){
@@ -146,7 +149,7 @@ public class DMconf23 {
 		  // stampo le istanze
 		  for(int i=0; i<ris.size() ; i++){
 			  String str = "";
-			  for( String key: Attributi.keySet()){
+			  for( String key: attrNames){
 				  str += Istanze.get(key).get(i) + ", ";
 			  }
 			  file.write(str.substring(0, str.length()) );
