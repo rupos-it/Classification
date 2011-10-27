@@ -47,7 +47,7 @@ public class BPMNDecorateUtil {
 
 	public static BPMNDiagramExt exportPerformancetoBPMN(
 			BPMNDiagram bpmnoriginal,
-			PerformanceResult Performanceresult, Map<String, Place> MapArc2Place,
+			PerformanceResult Performanceresult, Collection< Place> placeFlowCollection,
 			Petrinet net) {
 
 		// clona bpmn
@@ -71,7 +71,7 @@ public class BPMNDecorateUtil {
 		 * rs.getTokenCount(); ArchiAttivatiBPMN.put(p.getLabel(), i); } }
 		 */
 
-		for (Place p : MapArc2Place.values()) {
+		for (Place p : placeFlowCollection) {
 
 			Collection<PetrinetEdge<? extends PetrinetNode, ? extends PetrinetNode>> edges = p
 			.getGraph().getOutEdges(p);
@@ -292,7 +292,7 @@ public class BPMNDecorateUtil {
 	}
 
 	public static BPMNDiagramExt exportConformancetoBPMN(
-			BPMNDiagram bpmnoriginal, Petrinet net, ConformanceResult conformanceresult, Map<String, Place> MapArc2Place) {
+			BPMNDiagram bpmnoriginal, Petrinet net, ConformanceResult conformanceresult, Collection< Place> placeFlowCollection) {
 
 
 
@@ -313,7 +313,7 @@ public class BPMNDecorateUtil {
 
 		// gli archi che attivo sul bpmn sono gli archi uscenti delle piazze
 		// "arco"
-		for (Place p : MapArc2Place.values()) {
+		for (Place p : placeFlowCollection) {
 			int att = 0;
 			for (PetrinetEdge<? extends PetrinetNode, ? extends PetrinetNode> egde : p
 					.getGraph().getOutEdges(p)) {

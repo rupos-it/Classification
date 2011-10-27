@@ -1,5 +1,6 @@
 package org.processmining.plugins.bpmn;
 
+import java.util.Collection;
 import java.util.LinkedHashMap;
 import org.processmining.framework.connections.impl.AbstractStrongReferencingConnection;
 import org.processmining.framework.plugin.PluginContext;
@@ -14,7 +15,7 @@ public class BPMNtoPNConnection extends AbstractStrongReferencingConnection{
 	public static String BPMN = "BPMN";
 	public static String PNET = "Petrinet";
 	public static String ERRORLOG = "ErrorLog";
-	public static String MAPARCTOPLACE = "MapArcToPlace";
+	public static String PLACEFLOWCONNECTION = "placeFlowCollection";
 	
 	
 	
@@ -27,12 +28,12 @@ public class BPMNtoPNConnection extends AbstractStrongReferencingConnection{
 		
 	}
 	public BPMNtoPNConnection(BPMNDiagram bpmn, PetrinetGraph net,
-			String error, LinkedHashMap<String, Place> placeMap) {
+			String error, Collection<Place> placeFlowCollection) {
 		super("BPMNtoPNConnection");
 		put(BPMN, bpmn);
-		putStrong(MAPARCTOPLACE, placeMap);
+		putStrong(PLACEFLOWCONNECTION, placeFlowCollection);
 		put(PNET, net);
-		put(ERRORLOG, error);
+		putStrong(ERRORLOG, error);
 	}
 
 	@PluginVariant(requiredParameterLabels = { 0, 1 ,2})

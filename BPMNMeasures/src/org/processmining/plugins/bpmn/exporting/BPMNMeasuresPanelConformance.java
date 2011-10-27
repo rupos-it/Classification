@@ -5,6 +5,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Collection;
 import java.util.Map;
 
 import info.clearthought.layout.TableLayout;
@@ -65,7 +66,7 @@ public class BPMNMeasuresPanelConformance extends JPanel{
 	
 	private LegendConformancePanel legendInteractionPanel;
 	private LogViewInteractivePanel logInteractionPanel;
-	private Map<String, Place> placeMap;
+	private Collection<Place> placeFlowCollection;
 	private TotalConformanceResult tovisualize;
 	private UIPluginContext context;
 	private Petrinet net;
@@ -130,9 +131,9 @@ public class BPMNMeasuresPanelConformance extends JPanel{
 			// connection found. Create all necessary component to instantiate inactive visualization panel
 			
 		    bpmn = connection2.getObjectWithRole(BPMNtoPNConnection.BPMN);
-		    placeMap = connection2.getObjectWithRole(BPMNtoPNConnection.MAPARCTOPLACE);
+		    placeFlowCollection = connection2.getObjectWithRole(BPMNtoPNConnection.PLACEFLOWCONNECTION);
 			
-			bpmnext = BPMNDecorateUtil.exportConformancetoBPMN(bpmn, net, resultc.getTotal(), placeMap);
+			bpmnext = BPMNDecorateUtil.exportConformancetoBPMN(bpmn, net, resultc.getTotal(), placeFlowCollection);
 			
 			 tovisualize = resultc;
 				fill();
@@ -184,7 +185,7 @@ public class BPMNMeasuresPanelConformance extends JPanel{
 		// TODO Auto-generated method stub
 		Petrinet netx = PetrinetFactory.clonePetrinet(net);
 		PetriNetDrawUtil.drawconformance(netx,tovisualize.getList().get(i));
-		 bpmnext = BPMNDecorateUtil.exportConformancetoBPMN(bpmn,net, tovisualize.getList().get(i),placeMap);
+		 bpmnext = BPMNDecorateUtil.exportConformancetoBPMN(bpmn,net, tovisualize.getList().get(i),placeFlowCollection);
 		remove(netPNView);
 		remove(netBPMNView);
 		netPNView = ProMJGraphVisualizer.instance().visualizeGraph(context, netx);
@@ -210,7 +211,7 @@ public class BPMNMeasuresPanelConformance extends JPanel{
 		// TODO Auto-generated method stub
 		Petrinet netx = PetrinetFactory.clonePetrinet(net);
 		PetriNetDrawUtil.drawconformance(netx,tovisualize.getTotal());
-		bpmnext = BPMNDecorateUtil.exportConformancetoBPMN(bpmn,net, tovisualize.getTotal(),placeMap);
+		bpmnext = BPMNDecorateUtil.exportConformancetoBPMN(bpmn,net, tovisualize.getTotal(),placeFlowCollection);
 		remove(netPNView);
 		remove(netBPMNView);
 		netPNView = ProMJGraphVisualizer.instance().visualizeGraph(context, netx);
