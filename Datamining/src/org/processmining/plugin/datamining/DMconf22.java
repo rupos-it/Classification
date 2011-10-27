@@ -4,11 +4,9 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.util.List;
 import java.util.Vector;
-import java.util.concurrent.ExecutionException;
 
 import it.unipi.rupos.processmining.PetriNetEngine;
 
-import org.deckfour.xes.model.XAttribute;
 import org.deckfour.xes.model.XAttributeLiteral;
 import org.deckfour.xes.model.XLog;
 import org.processmining.contexts.cli.ProMFactory;
@@ -19,20 +17,19 @@ import org.processmining.plugins.petrinet.replay.conformance.ConformanceResult;
 import org.processmining.plugins.petrinet.replay.conformance.TotalConformanceResult;
 import org.processmining.plugins.petrinet.replayfitness.ReplayFitnessSetting;
 
-public class DMconf {
+public class DMconf22 {
 
 	/**
 	 * @param args
 	 * @throws Exception 
 	 */
-	
-	// Caso1 : Un solo attributo URG generato da un solo evento
+	// caso 22 : 2 attributi Litteral di cui conosco il nome ( conf urg ed liv ) ma non i valori
 	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
 		
 		String pathLogFile="../examples/";
     	
-		String logFile = pathLogFile+"logBugFix1.mxml";
+		String logFile = pathLogFile+"logBugFix21.mxml";
 	    String netFile = pathLogFile+"BugFix.pnml";
 		
 	    	
@@ -57,14 +54,15 @@ public class DMconf {
 		TotalConformanceResult fitness = engine.getFitness(log, settings);  //--> torna il risultato di conf della PN rispetto a log
 		System.out.println("Fitness: " + fitness);
 		
-		//Marking missing = fitness.getList().get(0).getMissingMarking();
-		//missing.isEmpty();
-		
-		//XAttributeLiteral attr = (XAttributeLiteral) log.get(0).get(0).getAttributes().get("urg");
-		//attr.getValue();
 		
 		List<String> istance_urg = new Vector<String>();
+		List<String> valori_urg = new Vector<String>();
+		
 		List<String> istance_conf = new Vector<String>();
+
+		List<String> istance_liv = new Vector<String>();
+		List<String> valori_liv = new Vector<String>();
+
 		
 		List<ConformanceResult> ris = fitness.getList();
 		
@@ -76,19 +74,44 @@ public class DMconf {
 			else {istance_conf.add("FALSE");}
 							
 			//controllo l'urgenza della traccia i-esima
-			XAttributeLiteral attr = (XAttributeLiteral) log.get(i).get(0).getAttributes().get("urg");
-			istance_urg.add(attr.getValue().toUpperCase());		
+			XAttributeLiteral attr_urg = (XAttributeLiteral) log.get(i).get(0).getAttributes().get("urg");
+			//controllo se il valore è uno di quelli che conosco ed eventulamente lo aggiungo
+			if( ! valori_urg.contains(attr_urg.getValue()) ){
+				valori_urg.add(attr_urg.getValue());
+			}
+			
+			XAttributeLiteral attr_liv = (XAttributeLiteral) log.get(i).get(0).getAttributes().get("liv");
+			if( ! valori_liv.contains(attr_liv.getValue()) ){
+				valori_liv.add(attr_liv.getValue());
+			}
+			
+			// aggiungo le istanze
+			istance_urg.add(attr_urg.getValue().toUpperCase());	
+			istance_liv.add(attr_liv.getValue());		
+
 		}
 		
 		
 		// faccio il file arff
-		  FileWriter fstream = new FileWriter("BugFix1.arff");
+		  int j;
+		  FileWriter fstream = new FileWriter("BugFix22.arff");
 		  BufferedWriter file = new BufferedWriter(fstream);
 		  file.write("@relation BugFix\n");
 		  file.write("\n");
 		  
-		  file.write("@attribute urg {TRUE, FALSE} \n");
+		  file.write("@attribute urg {"); // {TRUE, FALSE} \n");
+		  for( j = 0; j< valori_urg.size() - 1 ; j++ ){
+			  file.write(valori_urg.get(j) + ", ");
+		  }
+		  file.write(valori_urg.get(valori_urg.size() -1) + "}\n");
+		  		  
 		  file.write("@attribute conf {TRUE, FALSE}\n");
+		  
+		  file.write("@attribute livello {");
+		  for( j = 0; j< valori_liv.size() - 1 ; j++ ){
+			  file.write(valori_liv.get(j) + ", ");
+		  }
+		  file.write(valori_liv.get(valori_liv.size() -1) + "}\n");
 		  
 		  file.write("\n");		  
 		  file.write("@data");
@@ -96,7 +119,8 @@ public class DMconf {
 		  
 		  for( int i=0; i<istance_urg.size(); i++ ){
 			  file.write(istance_urg.get(i) + ",");
-			  file.write(istance_conf.get(i) + "\n");
+			  file.write(istance_conf.get(i) + ",");
+			  file.write(istance_liv.get(i) + "\n");
 		  }
 		
 		  file.flush();
