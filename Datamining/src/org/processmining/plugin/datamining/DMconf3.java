@@ -3,8 +3,10 @@ package org.processmining.plugin.datamining;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.Vector;
 
 import it.unipi.rupos.processmining.PetriNetEngine;
@@ -32,8 +34,7 @@ public class DMconf3 {
 	 * @param args
 	 * @throws Exception 
 	 */
-	// caso 23: attributi di tipo litteral di cui non conosco il nome e nemmeno i valori
-	//public enum NonInteressanti {org:resource, time:timestamp, concept:name, lifecycle:transition};
+	// caso 3: attributi di vario tipo di cui non conosco il nome e nemmeno i valori
 	
 	public static void main(String[] args) throws Exception {
 		// TODBO Auto-generated method stub
@@ -74,17 +75,11 @@ public class DMconf3 {
 		TotalConformanceResult fitness = engine.getFitness(log, settings);  //--> torna il risultato di conf della PN rispetto a log
 		System.out.println("Fitness: " + fitness);
 		
-		Map<String,List<String>> Attributi = new HashMap<String,List<String>>();
-		Map<String,List<String>> Istanze = new HashMap<String,List<String>>();
-		List<String> istance_conf = new Vector<String>();		/*assumo che la conformità c'è sempre*/
+		Map<String,Set<String>> litAttributes = new HashMap<String,Set<String>>();
+		Set<String> floatAttributes = new HashSet<String>();
+		Set<String> boolAttributes = new HashSet<String>();
 
-
-		//Marking missing = fitness.getList().get(0).getMissingMarking();
-		//missing.isEmpty();
-		
-		//XAttributeLiteral attr = (XAttributeLiteral) log.get(0).get(0).getAttributes().get("urg");
-		//attr.getValue();
-		
+				
 		// posso fare che dal primo evento della prima trace ricavo quali sono gli attributi
 		// e li metto in una struttura vector !
 		
@@ -93,90 +88,64 @@ public class DMconf3 {
 			  
 			  if (!NonInteressanti.contains(key))
 			  {
-				  if(! Attributi.containsKey(key) )
-					  Attributi.put(key,new Vector<String>());
-				  
 				  // a seconda del tipo scrivo nel primo elemento del vettore dei valori,il tipo:
-				  XAttribute val = log.get(0).get(0).getAttributes().get(key);
+				  XAttribute val = attrs.get(key);
 				  if( val instanceof XAttributeContinuousImpl || 
 						  val instanceof XAttributeDiscreteImpl )
-					  Attributi.get(key).add("NUMERIC");
+					  floatAttributes.add(key);
 				  if( val instanceof XAttributeBooleanImpl)
-					  Attributi.get(key).add("BOOL");
+					  boolAttributes.add(key);
 				  if( val instanceof XAttributeLiteralImpl )
-					  Attributi.get(key).add("NOMINAL");
-
+					  litAttributes.put(key, new HashSet<String>());
 			  }
 		  }
-		  
-		  //creo le istanze
-		  for( String key: Attributi.keySet())
-			  Istanze.put(key, new Vector<String>());
-		  
 		  
 		  List<ConformanceResult> ris = fitness.getList();
 		  
 		  for(int i=0; i<ris.size(); i++){
-			  
-			   // controllo la conformità della traccia i-esima
-				Marking missing = fitness.getList().get(i).getMissingMarking();
-				if(missing.isEmpty() ) {istance_conf.add("TRUE");}
-				else {istance_conf.add("FALSE");}
-			  
-				
-				// per ogni attributo di Attributi ricavo il valore dell'istanza i-esima( sempre all'evento 0 )
-				// aggiungo il valore eventualmente se non c'era già, ed aggiungo l'istanza
-				
-				for( String chiave: Attributi.keySet() ){
-					XAttribute attr = log.get(i).get(0).getAttributes().get(chiave);
+				for( String key: litAttributes.keySet() ){
+					XAttribute attr = log.get(i).get(0).getAttributes().get(key);
 					if( attr instanceof XAttributeLiteralImpl){
-						Istanze.get(chiave).add(((XAttributeLiteral) attr).getValue());
-						if( ! Attributi.get(chiave).contains( ((XAttributeLiteral) attr).getValue()) )
-						Attributi.get(chiave).add(((XAttributeLiteral) attr).getValue());
-					}
-
-					else if (attr instanceof  XAttributeContinuousImpl){
-						String value = Double.toString(((XAttributeContinuousImpl) attr).getValue());
-						Istanze.get(chiave).add(value);
-					}
-					else if(attr instanceof XAttributeDiscreteImpl){
-						String value = Long.toString(((XAttributeDiscreteImpl) attr).getValue());
-						Istanze.get(chiave).add(value);
-					}
-					else if(attr instanceof XAttributeBooleanImpl){
-						Boolean value = ((XAttributeBooleanImpl) attr).getValue();
-						String s = value.toString();
-						Istanze.get(chiave).add(s);
+						litAttributes.get(key).add(((XAttributeLiteral) attr).getValue());
 					}
 				}
 		  }
-		  
+			  
 		  // Adesso preparo il file arff 
-		  FileWriter fstream = new FileWriter("viaggio2.arff");
+		  FileWriter fstream = new FileWriter("viaggioProva.arff");
 		  BufferedWriter file = new BufferedWriter(fstream);
 		  file.write("@relation BugFix\n");
 		  file.write("\n");
 		  
-		  List<String> attrNames = new Vector<String>();
-		  attrNames.addAll(Attributi.keySet());
-		  
-		  //Gli attributi 
-		  for( String att: attrNames){
-			  if(Attributi.get(att).get(0).equals("NOMINAL")){
-				  file.write("@attribute " + att + " {");
-				  List<String> valori = Attributi.get(att);
-				  for(int i=1; i<valori.size() - 1; i++){
-					  file.write(valori.get(i) + ", ");
-				  }
-				  file.write(valori.get(valori.size() - 1 ) + "}\n");
+		  List<String> litAttrNames = new Vector<String>();
+		  litAttrNames.addAll(litAttributes.keySet());
+		  //Gli attributi Lit
+		  for( String att: litAttrNames){
+			  file.write("@attribute " + att + " {");
+			  Set<String> valori = litAttributes.get(att);
+			  int commas = valori.size()-1;
+			  for (String val : valori) {
+				  file.write(val);
+				  if (commas > 0)
+					  file.write(",");
+				  commas--;
 			  }
-			  
-			  else if(Attributi.get(att).get(0).equals("NUMERIC"))
-				  file.write("@attribute " + att + " NUMERIC" + "\n");
-			  else if(Attributi.get(att).get(0).equals("BOOL"))
-				  file.write("@attribute " + att + " {TRUE, FALSE}" + "\n");
-
+			  file.write("}\n");
+		 }
+		  Vector<String> floatAttrNames = new Vector<String>();
+		  floatAttrNames.addAll(floatAttributes);
+		  //Gli attributi float
+		  for( String att: floatAttrNames){
+			  file.write("@attribute " + att + " NUMERIC" + "\n");
 		  }
+		  
+		  Vector<String> boolAttrNames = new Vector<String>();
+		  boolAttrNames.addAll(boolAttributes);
+		  //Gli attributi bool
+		  for( String att: boolAttrNames){
+			  file.write("@attribute " + att + " {TRUE, FALSE}" + "\n");
+		  }
+
 		  //attributo di conformance
 		  file.write("@attribute conf {TRUE, FALSE}\n");
 		  
@@ -185,18 +154,44 @@ public class DMconf3 {
 		  file.write("\n");
 
 		  // stampo le istanze
-		  for(int i=0; i<ris.size() ; i++){
+		  for(int i=0; i<ris.size() ; i++) {
 			  String str = "";
-			  for( String key: attrNames){
-				  str += Istanze.get(key).get(i) + ", ";
+			  for( String key: litAttrNames) {
+				  XAttribute attr = log.get(i).get(0).getAttributes().get(key);
+				  str += ((XAttributeLiteral) attr).getValue() + ", ";
 			  }
-			  file.write(str.substring(0, str.length()) );
-			  file.write(istance_conf.get(i) + "\n" );
+			  for( String key: floatAttrNames) {
+				  XAttribute attr = log.get(i).get(0).getAttributes().get(key);
+				  String value = "";
+				  if (attr instanceof  XAttributeContinuousImpl){
+					  value = Double.toString(((XAttributeContinuousImpl) attr).getValue());
+				  }
+				  else if(attr instanceof XAttributeDiscreteImpl){
+						value = Long.toString(((XAttributeDiscreteImpl) attr).getValue());
+				  }
+				  str += value + ", ";
+			  }
+			  for( String key: boolAttrNames) {
+				  XAttribute attr = log.get(i).get(0).getAttributes().get(key);
+				  Boolean value = ((XAttributeBooleanImpl) attr).getValue();
+				  str += value.toString() + ", ";
+			  }
+
+			  //file.write(str.substring(0, str.length()) );
+			  file.write(str);
+			  
+			   // controllo la conformità della traccia i-esima
+			  Marking missing = fitness.getList().get(i).getMissingMarking();
+			  if(missing.isEmpty() ) {
+				  file.write("TRUE" + "\n" );
+			  }
+			  else {
+				  file.write("FALSE" + "\n" );
+			  }
 		  }
 		  
 		  file.flush();
 		  System.out.println("FINITO");
 	}
-	
 
 }
