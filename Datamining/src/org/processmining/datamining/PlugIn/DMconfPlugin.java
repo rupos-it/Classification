@@ -62,8 +62,7 @@ public class DMconfPlugin {
 		Set<String> floatAttributes = new HashSet<String>();
 		Set<String> boolAttributes = new HashSet<String>();
 		
-		String pathArff = "../examples/";
-					
+				
 		/*Ricavo tutti gli attributi con una scansione*/
 		for( XTrace t : log ){
 			Map<String,Integer> CountAttributes = new HashMap<String,Integer>();
@@ -140,6 +139,7 @@ public class DMconfPlugin {
 		  Vector<String> values = new Vector<String>();
 		  values.add("TRUE");
 		  values.add("FALSE");
+		  values.add("?");
 		  Attribute wekaAttr = new Attribute("conformance", values);
 		  wekaAttrList.add(wekaAttr);
 
@@ -225,6 +225,7 @@ public class DMconfPlugin {
 		  		
 		  		instances.add(instance);
 		  }
+		  
 
 		  return instances;
 		

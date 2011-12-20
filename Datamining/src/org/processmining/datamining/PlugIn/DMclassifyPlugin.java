@@ -16,12 +16,12 @@ public class DMclassifyPlugin {
 			uiLabel="Weka classify Instances",
 			affiliation = "University of Pisa",
 			author = "Hind",
-			email = "hind")
+			email = "hind")		
 			
-	public Instances classifyIstances(PluginContext context, Instances instances, Classifier classifier) throws Exception{
+	public Instances classifyIstances(PluginContext context, Instances istanze, Classifier classifier) throws Exception{
 		
 		double clsVal = 0;
-		
+		Instances instances = new Instances(istanze);
 		instances.setClassIndex(instances.numAttributes() - 1);
 		
 		for( int i=0; i<instances.numInstances(); i++){
