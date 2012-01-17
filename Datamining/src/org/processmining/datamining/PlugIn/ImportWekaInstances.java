@@ -28,7 +28,7 @@ public class ImportWekaInstances  extends AbstractImportPlugin {
 	
 		DataSource source = new DataSource(input);
 		
-		 Instances data = source.getDataSet();
+		Instances data = source.getDataSet();
 		return data;
 	}
 }

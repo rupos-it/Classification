@@ -36,6 +36,8 @@ public class DMconf4 {
 	 * @throws Exception 
 	 * Caso in cui tutti gli eventi possono creare degli attributi,
 	 * Condizione : tutti gli attributi sono diversi
+	 * Nel caso in cui ci siano due attributi uguali, viene preso in considerazione 
+	 * l'ultimo attributo definito
 	 */
 	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
@@ -45,13 +47,11 @@ public class DMconf4 {
 	    NonInteressanti.add("concept:name");
 	    NonInteressanti.add("lifecycle:transition");
 	    
-
-
 	    
 	    
 		String pathLogFile="../examples/";
     	
-		String logFile = pathLogFile+"logViaggio.xes";
+		String logFile = pathLogFile+"prova.xes";
 	    String netFile = pathLogFile+"viaggio.pnml";
 		
 	    	
@@ -113,7 +113,7 @@ public class DMconf4 {
 		 
 			  
 		  // Adesso preparo il file arff 
-		  FileWriter fstream = new FileWriter("viaggio4.arff");
+		  FileWriter fstream = new FileWriter("Prova.arff");
 		  BufferedWriter file = new BufferedWriter(fstream);
 		  file.write("@relation BugFix\n");
 		  file.write("\n");
@@ -225,65 +225,7 @@ public class DMconf4 {
 		  
 		  /********************/
 		  
-		  /*
-		  for( XTrace tr : log ){
-			  String str = "";
-			  for( XEvent ev : tr ){
-				  if(((XAttributeLiteral) ev.getAttributes().get("lifecycle:transition")).getValue().equals("complete"))
-					  continue;
-				  for( String key: litAttrNames){
-					  XAttribute attr = ev.getAttributes().get(key);
-					  if( attr == null){
-						  //lo consideto un missing attribute
-						  str+="?, ";
-					  }
-					  else{
-						  str += ((XAttributeLiteral) attr).getValue() + ", ";
-					  }
-				  }
-				  for(String key: floatAttrNames){
-					  XAttribute attr = ev.getAttributes().get(key);
-					  if( attr == null){
-						  //lo considero un missing attribute
-						  str+="?, ";
-					  }
-					  else{
-						  String value = "";
-						  if (attr instanceof  XAttributeContinuousImpl){
-							  value = Double.toString(((XAttributeContinuousImpl) attr).getValue());
-						  }
-						  else if(attr instanceof XAttributeDiscreteImpl){
-								value = Long.toString(((XAttributeDiscreteImpl) attr).getValue());
-						  }
-						  str += value + ", ";
-					  }
-				  }
-				  for( String key: boolAttrNames){
-					  XAttribute attr = ev.getAttributes().get(key);
-					  if(attr == null){
-						  //lo consideto un missing attribute
-						  str+="?, ";
-					  }
-					  else{
-						  Boolean value = ((XAttributeBooleanImpl) attr).getValue();
-						  str += value.toString() + ", ";
-					  }
-
-				  }
-				  file.write(str);
-
-				  //controllo conformità della traccia tr
-				  Marking missing = fitness.getList().get(log.indexOf(tr)).getMissingMarking();
-				  if(missing.isEmpty() ) {
-					  file.write("TRUE" + "\n" );
-				  }
-				  else {
-					  file.write("FALSE" + "\n" );
-				  }
-				  
-			  }
-		  }
-		*/
+		 
 		  file.flush();
 		  System.out.println("FINITO");
 
