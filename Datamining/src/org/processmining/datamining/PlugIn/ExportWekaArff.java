@@ -24,8 +24,6 @@ public class ExportWekaArff {
 	public void export(PluginContext context, Instances instanceweka, File file) throws IOException {
 
 
-
-
 		FileOutputStream out = new FileOutputStream(file);
 		out.write(instanceweka.toString().getBytes());
 		out.close();

@@ -76,4 +76,4 @@ process = Sequence([ Entry("Inizio", notifyHook),
 			      ])
                       ], choiceHook)
 	          ])
-generate(process, 1000)
+generate(process, 200)
