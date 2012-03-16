@@ -1,4 +1,4 @@
-package org.processmining.plugin.datamining;
+package org.processmining.datamining.PlugIn;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;

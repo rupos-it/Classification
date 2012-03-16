@@ -59,6 +59,5 @@
 	<classpathentry kind="lib" path="packagelib/PetriNetReplayAnalysis.jar"/>
 	<classpathentry kind="lib" path="packagelib/PetriNetReplayer.jar"/>
 	<classpathentry kind="lib" path="packagelib/PetriNets.jar"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/rupos_main"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
