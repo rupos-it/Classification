@@ -10,77 +10,36 @@ from generator import defaultChoiceHook
 
 import random
 
-def notifyHook(t, attrs):
-    #Urgente = ["Yes", "No"]
-    # Urgente = [True, False]
-    # Urgente = [0, 1]
-    # Urgente = [0.0, 1.0]
-    #urg = Urgente[random.randint(0, len(Urgente)-1)]
-    #attrs["urg"] = urg
-
-
+def startHook(t, attrs):
     cittadinanza = ["Eu", "ExtraEu"]
     citt = cittadinanza[random.randint(0, len(cittadinanza)-1)]
     attrs["citt"] = citt
 
-    dests = ["Italy", "UK", "USA", "Spain"] 
-    dest = dests[random.randint(0, len(dests)-1)]
-    attrs["dest"] = dest
+    tipi = ["Bar", "Farmacia", "AntennaUMTS"] 
+    tipo = tipi[random.randint(0, len(tipi)-1)]
+    attrs["tipo"] = tipo
 
-    attrs["age"] = random.randint(1, 80)
+    t0, t1, a = defaultActivityHook(t, attrs)
 
-    t0, t1 = defaultActivityHook(t, attrs)
+    return t0,t1, ["citt", "tipo"]
 
-    return t0,t1
 
-def ConfermaHook(t, attrs ):
-    giorni = ["lun", "mart", "merc", "giov", "ven", "sab", "dom" ]
-    giorno = giorni[random.randint(0, len(giorni)-1)]
-    attrs["giorno"] = giorno
+def choiceHook1(l, attrs):
+  if( attrs["tipo"] != "AntennaUMTS"):
+      return defaultChoiceHook(l, attrs)
+  if( attrs["citt"] != "ExtraEu"):
+      return defaultChoiceHook(l, attrs)
+  return l[-1]
 
-    t0, t1 = defaultActivityHook(t, attrs)
+def choiceHook2(l, attrs):
+  if( attrs["tipo"] != "AntennaUMTS"):
+      return defaultChoiceHook(l[:-1], attrs)
+  if( attrs["citt"] != "ExtraEu"):
+      return defaultChoiceHook(l[:-1], attrs)
+  return l[-1]
 
-    return t0,t1
-
-def prenotaHook(t, attrs ):
-	
-    dests = ["Francia", "Germania", "Grecia", "Marocco"] 
-    dest = dests[random.randint(0, len(dests)-1)]
-    attrs["dest"] = dest
-
-    t0, t1 = defaultActivityHook(t, attrs)
-
-    return t0,t1
-
-def choiceHook(l, attrs):
-    #if  attrs["urg"] == "Yes":
-    #    return l[1]
-    #return l[0]
-
-  if( attrs["age"] < 18) :
-    return l[1] 
-
-  elif (attrs["age"]  >= 18 ):
-	if (attrs["citt"] == "ExtraEu" and ( attrs["dest"] == "USA" or attrs["dest"] == "UK")):
-		return l[1]
-  	else:
-     		return l[0]
-   #return defaultChoiceHook(l, attrs)
-
-# process = Sequence([ Entry("Inizio", notifyHook),
-#                       Choice([
-#                           Sequence([ Entry("PrenotaViaggio", prenotaHook), 
-#                                      Entry("Conferma", ConfermaHook)
-#                                ]),
-
-#                           Sequence([ Par([ Entry("PrenotaViaggio", prenotaHook), Entry("ProcVisto") ]),
-# 				     Entry("Conferma", ConfermaHook)
-				
-# 			      ])
-#                       ], choiceHook)
-# 	          ])
 process = Sequence([
-        Entry("AvvioProcedimento"),
+        Entry("AvvioProcedimento", startHook),
         Choice([
                 Entry("RinnovoAutorizzazione"),
                 Entry("NegaAutorizzazione"),
@@ -98,9 +57,14 @@ process = Sequence([
                                 Sequence([                                
                                         Entry("ParereNegativo"),
                                         Entry("NegaAutorizzazione")
+                                        ]),
+                                Sequence([
+                                        Entry("ParereConRiserva"),
+                                        Entry("RilascioAutorizzazione"),
+                                        Entry("ParereConRiserva"),
                                         ])
-                                ])
+                                ], choiceHook2)
                         ])
-                ])
+                ], choiceHook1)
         ])
 generate(process, 200)
