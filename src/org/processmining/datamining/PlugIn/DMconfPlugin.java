@@ -10,8 +10,6 @@ import java.util.Map;
 import java.util.Set;
 import java.util.Vector;
 
-import it.unipi.rupos.processmining.PetriNetEngine;
-
 import org.deckfour.xes.model.XAttribute;
 import org.deckfour.xes.model.XAttributeLiteral;
 import org.deckfour.xes.model.XAttributeMap;
@@ -22,8 +20,6 @@ import org.deckfour.xes.model.impl.XAttributeBooleanImpl;
 import org.deckfour.xes.model.impl.XAttributeContinuousImpl;
 import org.deckfour.xes.model.impl.XAttributeDiscreteImpl;
 import org.deckfour.xes.model.impl.XAttributeLiteralImpl;
-import org.processmining.contexts.cli.ProMFactory;
-import org.processmining.contexts.cli.ProMManager;
 import org.processmining.contexts.uitopia.annotations.UITopiaVariant;
 import org.processmining.framework.plugin.PluginContext;
 import org.processmining.framework.plugin.annotations.Plugin;
