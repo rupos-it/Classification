@@ -1,0 +1,8 @@
+print("TESTCASE: Conformance Test1");
+
+
+String testFileRoot = System.getProperty("test.testFileRoot", "./tests/testfiles");
+
+//----EXAMPLE SCRIPT FOR OPENING LOG-------
+
+// 1) -------------------------------------------------------------

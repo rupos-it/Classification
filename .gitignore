@@ -10,9 +10,14 @@ bindist
 prom5_log_files
 
 PetriNetReplayAnalysis/dist/
-
+TEST-org.processmining*
 BPMNMeasures/dist/
-
+dist
 examples
 prom61_origin
 rupos_context
+bin-test
+bin-test-instrument
+*.ser
+cover-html
+cover-xml
