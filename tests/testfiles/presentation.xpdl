@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package Id="XPDL_presentation.bpmn" Name="presentation.bpmn">
+	<PackageHeader>
+	<XPDLVersion>
+	2.0
+</XPDLVersion>
+<Vendor>
+	ProM
+</Vendor>
+<Created>
+	17/03/2012 09:22
+</Created>
+<Description>
+	ProM Mined BPMN Model
+</Description>
+<Documentation>
+	ProM Mined BPMN Model
+</Documentation>
+
+</PackageHeader>
+<Pools/>
+<WorkflowProcesses>
+	<WorkflowProcess Id="MainProcess-WF_presentation.bpmn" Name="presentation.bpmn" AccessLevel="PUBLIC">
+	<ProcessHeader>
+	<Created>
+	17/03/2012 09:22
+</Created>
+<Priority>
+	Normal
+</Priority>
+
+</ProcessHeader>
+<RedefinableHeader>
+	<Author>
+	ProM
+</Author>
+<Version>
+	2.0
+</Version>
+
+</RedefinableHeader>
+<XpdlParticipants>
+	<Participant Id="currentOwner">
+	<ParticipantType Type="ROLE"/>
+
+</Participant>
+
+</XpdlParticipants>
+<ActivitySets/>
+<Activities>
+	<Activity Id="-1713372576" Name="AvvioProcedimento">
+	<NodeGraphicsInfos>
+	<NodeGraphicsInfo ToolId="ProM" Height="40" Width="80">
+	<Coordinates XCoordinate="101" YCoordinate="166"/>
+
+</NodeGraphicsInfo>
+
+</NodeGraphicsInfos>
+
+</Activity>
+<Activity Id="-2010817499" Name="Parere">
+	<NodeGraphicsInfos>
+	<NodeGraphicsInfo ToolId="ProM" Height="40" Width="80">
+	<Coordinates XCoordinate="306" YCoordinate="212"/>
+
+</NodeGraphicsInfo>
+
+</NodeGraphicsInfos>
+
+</Activity>
+<Activity Id="1073625849" Name="ParerePositivo">
+	<NodeGraphicsInfos>
+	<NodeGraphicsInfo ToolId="ProM" Height="40" Width="80">
+	<Coordinates XCoordinate="511" YCoordinate="301"/>
+
+</NodeGraphicsInfo>
+
+</NodeGraphicsInfos>
+
+</Activity>
+<Activity Id="1881484866" Name="ParereConRiserva">
+	<NodeGraphicsInfos>
+	<NodeGraphicsInfo ToolId="ProM" Height="40" Width="80">
+	<Coordinates XCoordinate="511" YCoordinate="231"/>
+
+</NodeGraphicsInfo>
+
+</NodeGraphicsInfos>
+
+</Activity>
+<Activity Id="1517835955" Name="ParereNegativo">
+	<NodeGraphicsInfos>
+	<NodeGraphicsInfo ToolId="ProM" Height="40" Width="80">
+	<Coordinates XCoordinate="511" YCoordinate="161"/>
+
+</NodeGraphicsInfo>
+
+</NodeGraphicsInfos>
+
+</Activity>
+<Activity Id="1013453491" Name="NegaAutorizzazione">
+	<NodeGraphicsInfos>
+	<NodeGraphicsInfo ToolId="ProM" Height="40" Width="80">
+	<Coordinates XCoordinate="716" YCoordinate="201"/>
+
+</NodeGraphicsInfo>
+
+</NodeGraphicsInfos>
+
+</Activity>
+<Activity Id="1886987623" Name="RinnovoAutorizzazione">
+	<NodeGraphicsInfos>
+	<NodeGraphicsInfo ToolId="ProM" Height="40" Width="80">
+	<Coordinates XCoordinate="716" YCoordinate="131"/>
+
+</NodeGraphicsInfo>
+
+</NodeGraphicsInfos>
+
+</Activity>
+<Activity Id="-2056501124" Name="RilascioAutorizzazione">
+	<NodeGraphicsInfos>
+	<NodeGraphicsInfo ToolId="ProM" Height="40" Width="80">
+	<Coordinates XCoordinate="716" YCoordinate="271"/>
+
+</NodeGraphicsInfo>
+
+</NodeGraphicsInfos>
+
+</Activity>
+<Activity Id="1043267192" Name="Start">
+	<Event>
+	<StartEvent Trigger="NONE"/>
+
+</Event>
+<NodeGraphicsInfos>
+	<NodeGraphicsInfo ToolId="ProM" Height="50" Width="50">
+	<Coordinates XCoordinate="1" YCoordinate="161"/>
+
+</NodeGraphicsInfo>
+
+</NodeGraphicsInfos>
+
+</Activity>
+<Activity Id="-962744245" Name="End">
+	<Event>
+	<EndEvent/>
+
+</Event>
+<NodeGraphicsInfos>
+	<NodeGraphicsInfo ToolId="ProM" Height="50" Width="50">
+	<Coordinates XCoordinate="921" YCoordinate="196"/>
+
+</NodeGraphicsInfo>
+
+</NodeGraphicsInfos>
+
+</Activity>
+<Activity Id="95926936" Name="GW1">
+	<Route GatewayType="XOR" MarkerVisible="true"/>
+<TransitionRestrictions>
+	<TransitionRestriction>
+	<Split Type="XOR">
+	<TransitionRefs>
+	<TransitionRef Id="1406597839" Name="1406597839"/>
+<TransitionRef Id="-537683756" Name="-537683756"/>
+<TransitionRef Id="489051329" Name="489051329"/>
+
+</TransitionRefs>
+
+</Split>
+
+</TransitionRestriction>
+
+</TransitionRestrictions>
+<NodeGraphicsInfos>
+	<NodeGraphicsInfo ToolId="ProM" Height="25" Width="25">
+	<Coordinates XCoordinate="231" YCoordinate="171"/>
+
+</NodeGraphicsInfo>
+
+</NodeGraphicsInfos>
+
+</Activity>
+<Activity Id="79545800" Name="gw2_none">
+	<Route GatewayType="XOR" MarkerVisible="true"/>
+<TransitionRestrictions>
+	<TransitionRestriction>
+	<Join Type="XOR"/>
+
+</TransitionRestriction>
+
+</TransitionRestrictions>
+<NodeGraphicsInfos>
+	<NodeGraphicsInfo ToolId="ProM" Height="25" Width="25">
+	<Coordinates XCoordinate="846" YCoordinate="208"/>
+
+</NodeGraphicsInfo>
+
+</NodeGraphicsInfos>
+
+</Activity>
+<Activity Id="-31123850" Name="GW3">
+	<Route GatewayType="XOR" MarkerVisible="true"/>
+<TransitionRestrictions>
+	<TransitionRestriction>
+	<Split Type="XOR">
+	<TransitionRefs>
+	<TransitionRef Id="-262136312" Name="-262136312"/>
+<TransitionRef Id="1718692639" Name="1718692639"/>
+<TransitionRef Id="-603585326" Name="-603585326"/>
+
+</TransitionRefs>
+
+</Split>
+
+</TransitionRestriction>
+
+</TransitionRestrictions>
+<NodeGraphicsInfos>
+	<NodeGraphicsInfo ToolId="ProM" Height="25" Width="25">
+	<Coordinates XCoordinate="436" YCoordinate="233"/>
+
+</NodeGraphicsInfo>
+
+</NodeGraphicsInfos>
+
+</Activity>
+<Activity Id="-478763354" Name="gw5_none">
+	<Route GatewayType="XOR" MarkerVisible="true"/>
+<TransitionRestrictions>
+	<TransitionRestriction>
+	<Join Type="XOR"/>
+
+</TransitionRestriction>
+
+</TransitionRestrictions>
+<NodeGraphicsInfos>
+	<NodeGraphicsInfo ToolId="ProM" Height="25" Width="25">
+	<Coordinates XCoordinate="641" YCoordinate="164"/>
+
+</NodeGraphicsInfo>
+
+</NodeGraphicsInfos>
+
+</Activity>
+<Activity Id="690502238" Name="gw4_none">
+	<Route GatewayType="XOR" MarkerVisible="true"/>
+<TransitionRestrictions>
+	<TransitionRestriction>
+	<Join Type="XOR"/>
+
+</TransitionRestriction>
+
+</TransitionRestrictions>
+<NodeGraphicsInfos>
+	<NodeGraphicsInfo ToolId="ProM" Height="25" Width="25">
+	<Coordinates XCoordinate="641" YCoordinate="274"/>
+
+</NodeGraphicsInfo>
+
+</NodeGraphicsInfos>
+
+</Activity>
+
+</Activities>
+<Transitions>
+	<Transition Id="-1078449479" From="1043267192" To="-1713372576">
+	<ConnectorGraphicsInfos>
+	<ConnectorGraphicsInfo ToolId="ProM" BorderColor="0"/>
+
+</ConnectorGraphicsInfos>
+
+</Transition>
+<Transition Id="-1321723612" From="-1713372576" To="95926936">
+	<ConnectorGraphicsInfos>
+	<ConnectorGraphicsInfo ToolId="ProM" BorderColor="0"/>
+
+</ConnectorGraphicsInfos>
+
+</Transition>
+<Transition Id="1406597839" From="95926936" To="-2010817499">
+	<ConnectorGraphicsInfos>
+	<ConnectorGraphicsInfo ToolId="ProM" BorderColor="0"/>
+
+</ConnectorGraphicsInfos>
+
+</Transition>
+<Transition Id="-998226155" From="-2010817499" To="-31123850">
+	<ConnectorGraphicsInfos>
+	<ConnectorGraphicsInfo ToolId="ProM" BorderColor="0"/>
+
+</ConnectorGraphicsInfos>
+
+</Transition>
+<Transition Id="1601267990" From="79545800" To="-962744245">
+	<ConnectorGraphicsInfos>
+	<ConnectorGraphicsInfo ToolId="ProM" BorderColor="0"/>
+
+</ConnectorGraphicsInfos>
+
+</Transition>
+<Transition Id="-537683756" From="95926936" To="1886987623">
+	<ConnectorGraphicsInfos>
+	<ConnectorGraphicsInfo ToolId="ProM" BorderColor="0"/>
+
+</ConnectorGraphicsInfos>
+
+</Transition>
+<Transition Id="489051329" From="95926936" To="-478763354">
+	<ConnectorGraphicsInfos>
+	<ConnectorGraphicsInfo ToolId="ProM" BorderColor="0"/>
+
+</ConnectorGraphicsInfos>
+
+</Transition>
+<Transition Id="-262136312" From="-31123850" To="1073625849">
+	<ConnectorGraphicsInfos>
+	<ConnectorGraphicsInfo ToolId="ProM" BorderColor="0"/>
+
+</ConnectorGraphicsInfos>
+
+</Transition>
+<Transition Id="1718692639" From="-31123850" To="1881484866">
+	<ConnectorGraphicsInfos>
+	<ConnectorGraphicsInfo ToolId="ProM" BorderColor="0"/>
+
+</ConnectorGraphicsInfos>
+
+</Transition>
+<Transition Id="-603585326" From="-31123850" To="1517835955">
+	<ConnectorGraphicsInfos>
+	<ConnectorGraphicsInfo ToolId="ProM" BorderColor="0"/>
+
+</ConnectorGraphicsInfos>
+
+</Transition>
+<Transition Id="-225620188" From="1013453491" To="79545800">
+	<ConnectorGraphicsInfos>
+	<ConnectorGraphicsInfo ToolId="ProM" BorderColor="0"/>
+
+</ConnectorGraphicsInfos>
+
+</Transition>
+<Transition Id="2013330317" From="1886987623" To="79545800">
+	<ConnectorGraphicsInfos>
+	<ConnectorGraphicsInfo ToolId="ProM" BorderColor="0"/>
+
+</ConnectorGraphicsInfos>
+
+</Transition>
+<Transition Id="-1323839653" From="1517835955" To="-478763354">
+	<ConnectorGraphicsInfos>
+	<ConnectorGraphicsInfo ToolId="ProM" BorderColor="0"/>
+
+</ConnectorGraphicsInfos>
+
+</Transition>
+<Transition Id="-1451522561" From="-478763354" To="1013453491">
+	<ConnectorGraphicsInfos>
+	<ConnectorGraphicsInfo ToolId="ProM" BorderColor="0"/>
+
+</ConnectorGraphicsInfos>
+
+</Transition>
+<Transition Id="-502691708" From="1073625849" To="690502238">
+	<ConnectorGraphicsInfos>
+	<ConnectorGraphicsInfo ToolId="ProM" BorderColor="0"/>
+
+</ConnectorGraphicsInfos>
+
+</Transition>
+<Transition Id="-82180969" From="1881484866" To="690502238">
+	<ConnectorGraphicsInfos>
+	<ConnectorGraphicsInfo ToolId="ProM" BorderColor="0"/>
+
+</ConnectorGraphicsInfos>
+
+</Transition>
+<Transition Id="-282949026" From="690502238" To="-2056501124">
+	<ConnectorGraphicsInfos>
+	<ConnectorGraphicsInfo ToolId="ProM" BorderColor="0"/>
+
+</ConnectorGraphicsInfos>
+
+</Transition>
+<Transition Id="-730731717" From="-2056501124" To="79545800">
+	<ConnectorGraphicsInfos>
+	<ConnectorGraphicsInfo ToolId="ProM" BorderColor="0"/>
+
+</ConnectorGraphicsInfos>
+
+</Transition>
+
+</Transitions>
+
+</WorkflowProcess>
+
+</WorkflowProcesses>
+
+</Package>

@@ -1,6 +1,7 @@
 print("Starting example script...");
 
-String testFileRoot = System.getProperty("test.testFileRoot", ".");
+
+String testFileRoot = System.getProperty("test.testFileRoot", "./tests/testfiles");
 
 //----EXAMPLE SCRIPT FOR OPENING LOG-------
 print("1) Opening log file...");
@@ -11,3 +12,47 @@ print(testFileRoot);
 // org.deckfour.xes.model.XLog log = open_xes_log_file(testFileRoot+"/grouped_a12f0n00.xml");
 // print(" id of the opened log: " + log);
 // junit.framework.Assert.assertNotNull("Log is not null", log);
+
+
+String filebpmn = "presentation.xpdl";
+
+String filelog = "presentation.xes";
+
+print("path: "+testFileRoot);
+print("Reading file: "+filebpmn);
+print("Reading file: "+filelog);
+
+
+bpmn = import_bpmn_model_from_xpdl_2_1_file(testFileRoot+"/"+filebpmn);
+junit.framework.Assert.assertNotNull("xpdl file is not null", bpmn);
+
+petrinet = bpmn_to_petrinet(bpmn)[0];
+junit.framework.Assert.assertNotNull("PN is not null", petrinet);
+
+log = open_xes_log_file(testFileRoot+"/"+filelog);
+junit.framework.Assert.assertNotNull("Log file is not null", log);
+
+print("Log"+log);
+print("PN "+petrinet);
+
+print("Conformance");
+
+result = pn_conformace_analysis(log,petrinet);
+junit.framework.Assert.assertNotNull("Conformance is not null", result);
+
+
+arff = log_to_arff(log,result);
+junit.framework.Assert.assertNotNull("Log to arff is not null", arff);
+print("class: "+arff);
+
+istotcla = istances_to_classifier(arff);
+junit.framework.Assert.assertNotNull("istances_to_classifier is not null", istotcla);
+print("istotcla: "+istotcla);
+
+classa = log_to_instances_to_classify(log);
+junit.framework.Assert.assertNotNull("Log to class is not null", classa);
+
+
+newbpmn= bpmn_measures_with_analisys_details(result);
+
+junit.framework.Assert.assertTrue("Conformace success: "+result, result!=null);
