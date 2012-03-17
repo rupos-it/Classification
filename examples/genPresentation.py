@@ -67,4 +67,4 @@ process = Sequence([
                         ])
                 ], choiceHook1)
         ])
-generate(process, 200)
+generate(process, 100)
