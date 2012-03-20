@@ -78,11 +78,11 @@ public class DMconfPlugin {
 						  XAttribute val = attrs.get(key);
 						  if( val instanceof XAttributeContinuousImpl || 
 								  val instanceof XAttributeDiscreteImpl )
-							  floatAttributes.add(key + "_" + CountAttributes.get(key).toString());
+							  floatAttributes.add(key + "^" + CountAttributes.get(key).toString());
 						  if( val instanceof XAttributeBooleanImpl)
-							  boolAttributes.add(key + "_" + CountAttributes.get(key).toString());
+							  boolAttributes.add(key + "^" + CountAttributes.get(key).toString());
 						  if( val instanceof XAttributeLiteralImpl ){
-							  litAttributes.add(key + "_" + CountAttributes.get(key).toString());
+							  litAttributes.add(key + "^" + CountAttributes.get(key).toString());
 							  if(! litAttributesValues.containsKey(key))
 								  litAttributesValues.put(key, new HashSet<String>());
 							  
@@ -107,7 +107,7 @@ public class DMconfPlugin {
 		 litAttrNames.addAll(litAttributes);
 		 //Gli attributi Lit
 		 for( String att: litAttrNames){
-			 String chiave = att.substring(0, att.indexOf("_"));
+			 String chiave = att.substring(0, att.indexOf("^"));
 			 Set<String> valori = litAttributesValues.get(chiave);
 			 Attribute wekaAttr = new Attribute(att, new Vector<String>(valori));
 			 wekaAttrList.add(wekaAttr);
@@ -169,16 +169,16 @@ public class DMconfPlugin {
 						  continue;
 					  XAttribute val = attrs.get(key);
 					  if( val instanceof XAttributeContinuousImpl){
-						   trAttributes.put(key  + "_" + CountAttributes.get(key).toString() ,Double.toString(((XAttributeContinuousImpl) val).getValue()));
+						   trAttributes.put(key  + "^" + CountAttributes.get(key).toString() ,Double.toString(((XAttributeContinuousImpl) val).getValue()));
 					  }
 					  if(val instanceof XAttributeDiscreteImpl){
-						  trAttributes.put(key  + "_" + CountAttributes.get(key).toString(), Long.toString(((XAttributeDiscreteImpl) val).getValue()));
+						  trAttributes.put(key  + "^" + CountAttributes.get(key).toString(), Long.toString(((XAttributeDiscreteImpl) val).getValue()));
 					  }				  
 					  if( val instanceof XAttributeBooleanImpl){
-						  trAttributes.put(key  + "_" + CountAttributes.get(key).toString(),Boolean.toString(((XAttributeBooleanImpl) val).getValue()));
+						  trAttributes.put(key  + "^" + CountAttributes.get(key).toString(),Boolean.toString(((XAttributeBooleanImpl) val).getValue()));
 					  }
 					  if( val instanceof XAttributeLiteralImpl ){
-						  trAttributes.put(key  + "_" + CountAttributes.get(key).toString(), ((XAttributeLiteral) val).getValue());
+						  trAttributes.put(key  + "^" + CountAttributes.get(key).toString(), ((XAttributeLiteral) val).getValue());
 					  }
 						  
 					  

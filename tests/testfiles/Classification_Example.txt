@@ -24,6 +24,8 @@ print("Reading file: "+filelog);
 
 
 bpmn = import_bpmn_model_from_xpdl_2_1_file(testFileRoot+"/"+filebpmn);
+//bpmn = import_bpmn_model_from_bpmn_2_0_file(testFileRoot+"/"+filebpmn);
+
 junit.framework.Assert.assertNotNull("xpdl file is not null", bpmn);
 
 petrinet = bpmn_to_petrinet(bpmn)[0];
