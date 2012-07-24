@@ -1,0 +1,55 @@
+\documentclass[11pt]{article}
+\usepackage[latin1,utf8x]{inputenc}
+\usepackage{color}
+
+\title{Titolo da decidere}
+\author{authors}
+\date{date}
+\begin{document}
+\maketitle
+\begin{abstract}
+This is a very short abstract.
+\end{abstract}
+
+\section{Introduction}
+
+\textcolor{blue}{
+Process mining is a recent discipline that includes tecniques for process analysis and discovery. Today, many Information Systems that integrate the concept of business process, provide registration of events that occur during the execution of the process activities. Starting from recorded executions related on the same process, the goal of the existing process mining techniques is extracting data to discover automatically a process model or, if the model is already exists, to check the executions in term of conformance and performance.\\
+\newline
+The idea that ispires this work consists in developing un approach for exploiting the huge ammount of data recorded at the process activities by information systems. More precisely, our purpose is to find pattern on data that could influence the process behaviour. For this reason, the work presented in this article is based on some concepts originated to Machine Learning and Data Mining disciplines. Should be noted that using data mining for similar aims has already been explored by Van der Aalst in \cite{}, the idea here consists in discovering how data attributes may influence the routing of case. Instead, in this contribution the intention is to present an approach based on data mining techniques also, but for discovering data dependencies on the process conformance and performance. Finally, an another goal that we propose is providing a predective model to detect the conformance result and some performance metrics for new process executions.  \\}
+\newline
+\textcolor{blue}{In front of a very large number of process instances, all recorded in event log, it is essential to have an automatic tool for extracting usefull information in analysing the real behaviour of the process. In order to meet this requirement, in this article we present an approach based on classification and decision trees to identify rules that could influence the process in term of conformance to the existing model, and performance metrics.\\}
+%\newline
+%\textcolor{blue}{
+%}
+
+%Il process mining comprende una serie di tecniche che trattano processi vigenti in contesti organizzativi. Attualmente, moltissimi sistemi che integrano il concetto di processo di business a loro interno, provvedono alla registrazione degli eventi che si verificano durante l'esecuzione delle attività previste dal processo. Partendo da un insieme di esecuzioni registrate e riguardanti un unico processo, è possibile applicare una serie di tecniche volte alla scoperta del modello di processo oppure alla sua analisi in termini di conformance e performance. L'idea che ispira questo articolo è sviluppare un approccio in grado di sfruttare le enormi quantità di dati che vengono registrati in corrispondenza delle varie attività del processo.
+%Si tratta di un approccio basato sulle tecniche di data mining capace di scoprire eventuali influenze dei dati sul comportamento del processo. L'impiego del data mining per il process mining è un'idea già presentata da Van deer Aalst in \cite{}, in questo articolo infatti si cerca di evidenziare le influenze dei dati sulla direzione del flusso di esecuzione in corrispondenza dei punti decisionali. La nostra idea invece è di sfruttare le tecniche di data mining per fornire agli analisti di porcesso un tool di supporto in grado di aiutare nell'analisi di conformance e performance del processo.\\
+
+
+
+
+%Di fronte ad un numero molto grande di istanze di processo, tutte appositamente registrate in event log, avere uno strumento capace di estrarre informazioni utili per l'analisi del comportamento reale del processo diventa fondamentale. Cercando di rispondere a questa esigenza, in questo articolo è presentato un approccio capace di individuare eventuali regole che influenzano il processo in termini di conformance al modello prefissato, ed in termini di performance. Un ulteriore obiettivo che ci poniamo è fornire agli analisti uno strumento di predizione, ovvero un modello in grado di predire, in base ai dati delle nuove istanze di processo che si presentano, quale sarà l'esito di conformance e le misure di performance che caratterizzano la particolare esecuzione presa in esame. Per potere realizzare questi obiettivi ci basiamo sulla classificazione che è una particolare tecnica di data mining, vengono inoltre impiegati gli alberi di decisione come strumento di classificazione.\\
+
+
+%L'articolo è organizzato in questo modo: dopo una presentazione nella sezione 2 dei vari formalismi adottati, nella sezione 3 viene presentato un semplice esempio a cui verrà fatto riferimento nell'articolo. Nella sezione 4 invece verranno introdotti alcuni concetti relativi alla conformance e performance di un processo. Infine, nella sezioni 5 e 6 si affronterà come impiegare la tecnica di classificazione per scoprire particolari pattern nei dati che possono influenzare conformance e performance del processo.
+
+\textcolor{blue}{
+The article is organized as follows. After an introduction to the different formalism used to carry out our purposes, the attention will be 
+}
+
+%\section{Formalismi e esempio }
+\section{Conformance and Performance Analysis based on Petri nets}
+
+The process analysis is performed by using the Petri net modelling the process and an event log recording the related executions (process instances). The basic building blocks of event logs are events. An event {\itshape e} can be seen as a pair {\itshape e = (a,t) } representing an action {\itshape a } recorded and the corresonding timestamp {\itshape t}. Action and timestamp are denoted respectively by $\alpha(e)$ and $\phi(e)$. Events that belong to the same process are grouped into {\itshape traces}. Formally, a trace $T$ is a finite sequence of events $T[1],..., T[n]$, such that $\phi(T[i]) \leq \phi(T[i+1])$ for all  $i \in [1,n)$. A log $L$ is a set of traces, recording the activities performed by a system during a finite number of process executions. We assume here the following hypothesis:
+\begin{itemize}
+\item All traces are instances of the same process.
+\item For each action there exists a corresponding transition in the net that will be denoted, for simplicity, by the same name of the action.
+\end{itemize}
+The key algorithm expoloited to analyze the Petri net model with respect to the log is the {\itshape log repaly} algorithm. Given a Petri net model and an event log as intput to the algorithm, the output results can be used to check the conformance of traces and to evaluate some performance metrics. For each trace in the log, log replay starts by placing one token in the start place of the net. For each event in the trace the corresponding transition is fires in an {\itshape non blockin way} and the marking of the net is updated. 'Non blocking replay' means that if the log replay execution requires to fire an enabled transition, the missing tokens are created artificially. The output of the log replay of a trace can be represented as an orderd list $R$ of pairs $(tr, i)$, representing that the transition $tr$ has been fired to mimic the event $T[i]$.
+\\
+
+In general, there could be exist some transition in the net called {\itshape invisible}. This can happen if the transition models an internal choice that is not visible in the system, or it is used to implement a construct of a more abstract modelling language (BPMN or others). Usually, invisible transitions are considered to be lazy, i.e, when firing a visible transition $t$ corrisponding to an event of the trace, only then the invisibile transition enabling $t$ is fired. However, in this paper, we adopt an other way for handling these transitions and the firing is performed as soon as possible. This allows to carry out some performance measures as explained that ar not possible with the lazy metohode as explained in \cite.\\
+
+The result of log repaly can be used to evaluate conformance and performance of the Petri net model. Conformance problems can be discovered by analyzing the tokens tha have been artificially created {\itshape (the missing tokens)} and the tokens tha were not consumed {\itshape (the remaining tokens)}.
+\end {document}
