@@ -1,0 +1,4 @@
+Il generatore di log è composto da due file in genere:
+gen.py : contiene :
+
+- defaultActivityHook(startTime, attrs): 
