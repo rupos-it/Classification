@@ -228,14 +228,14 @@ public class DMPerfPlugin {
 			  	//performance
 			 
 			 List<PerformanceResult> Perf = performance.getListperformance();
-			 System.out.println(Perf.size());
+			 //System.out.println(Perf.size());
 			 PerformanceResult trPerf= 	Perf.get(log.indexOf(tr));
 			 Map<Place, PerformanceData> PlaceData = trPerf.getList();
 			 List<Float> synchTimes = new Vector<Float>();
 			 for( Place p : PlaceData.keySet() ){
 				 float synch = PlaceData.get(p).getSynchTime();
 				 if (synch != 0 )
-				 	 synchTimes.add(new Float(synch));				 
+				 	 synchTimes.add(new Float(synch * 0.001));				 
 				/* if( synch < 0 )
 						 synchTimes.add( new Float(- synch));				  
 			 	*/
@@ -246,22 +246,21 @@ public class DMPerfPlugin {
 					 maxTime = time.floatValue();
 			 }
 			 
-			 System.out.println("**********TOSRING********");
+			 System.out.println("******************");
 			 System.out.println(maxTime);
-			 System.out.println("*************************");
+			 System.out.println("******************");
 			 
-			 if(maxTime > 1000 ) 
+			 if(maxTime  > 10800 ) 
 				 instance.setValue(wekaAttrindex, "HIGH");
 			 else
 				 instance.setValue(wekaAttrindex, "LOW");
 			 
-			 wekaAttrindex++;
 		  		
 		  	instances.add(instance);
-			  	/*System.out.println("**************TOSRING**********");
-			  	performance.toString();
-			  	System.out.println("************************");
-*/
+			  	
+		  	/*System.out.println("**************TOSRING**********");
+			performance.toString();
+		  	System.out.println("************************");*/
 		  }
 		 
 		 return instances;		

@@ -1,6 +1,10 @@
 \documentclass[11pt]{article}
 \usepackage[latin1,utf8x]{inputenc}
 \usepackage{color}
+\usepackage[pdftex]{graphicx}
+\usepackage{amsmath, amsfonts, amssymb, amsthm}
+
+
 
 \title{Titolo da decidere}
 \author{authors}
@@ -18,7 +22,7 @@ Process mining is a recent discipline that includes tecniques for process analys
 \newline
 The idea that ispires this work consists in developing un approach for exploiting the huge ammount of data recorded at the process activities by information systems. More precisely, our purpose is to find pattern on data that could influence the process behaviour. For this reason, the work presented in this article is based on some concepts originated to Machine Learning and Data Mining disciplines. Should be noted that using data mining for similar aims has already been explored by Van der Aalst in \cite{}, the idea here consists in discovering how data attributes may influence the routing of case. Instead, in this contribution the intention is to present an approach based on data mining techniques also, but for discovering data dependencies on the process conformance and performance. Finally, an another goal that we propose is providing a predective model to detect the conformance result and some performance metrics for new process executions.  \\}
 \newline
-\textcolor{blue}{In front of a very large number of process instances, all recorded in event log, it is essential to have an automatic tool for extracting usefull information in analysing the real behaviour of the process. In order to meet this requirement, in this article we present an approach based on classification and decision trees to identify rules that could influence the process in term of conformance to the existing model, and performance metrics.\\}
+\textcolor{blue}{In front of a very large number of process instances, all recorded in event log, it is essential to have an automatic tool for extracting usefull information for the analysis of the real behaviour of the process. In order to meet this requirement, in this article we present an approach based on classification and decision trees to identify rules that could influence the process in term of conformance to the existing model, and performance metrics.\\}
 %\newline
 %\textcolor{blue}{
 %}
@@ -35,10 +39,12 @@ The idea that ispires this work consists in developing un approach for exploitin
 %L'articolo è organizzato in questo modo: dopo una presentazione nella sezione 2 dei vari formalismi adottati, nella sezione 3 viene presentato un semplice esempio a cui verrà fatto riferimento nell'articolo. Nella sezione 4 invece verranno introdotti alcuni concetti relativi alla conformance e performance di un processo. Infine, nella sezioni 5 e 6 si affronterà come impiegare la tecnica di classificazione per scoprire particolari pattern nei dati che possono influenzare conformance e performance del processo.
 
 \textcolor{blue}{
-The article is organized as follows. After an introduction to the different formalism used to carry out our purposes, the attention will be 
+The article is organized as follows. After an introduction to the different formalism used to carry out our purposes, the attention will be...
 }
 
-%\section{Formalismi e esempio }
+\section{Example}\label{example}
+L'esmepio scelto si ispira ad una procedura che trova applicazione all'interno di organizzazioni a carattere commerciale, si tratta del processo di vendita. In questa sede viene considerata solo una sua semplificazione rispetto a quanto avviene realmente. Per noi, il processo di vendita inizia con l'attività 'notify', in questa fase viene accolto un ordine da parte di un cliente. Dopo la ricezione dell'ordine, vengono condotte alcune attività in parallelo (visto che non presentano alcuna dipendenza tra loro) una di queste è l'attività 'FinancialCheck', in questa fase viene effettuata una valutazione dell'ordine dal punto di vista finanziario, possiamo ad esmepio pensare che vengono condotte delle indagini sulla solvibilità del cliente che ha emesso l'ordine. Parallelamente viene svolta l'attività 'ExternalWarehouse'...
+
 \section{Conformance and Performance Analysis based on Petri nets}
 
 The process analysis is performed by using the Petri net modelling the process and an event log recording the related executions (process instances). The basic building blocks of event logs are events. An event {\itshape e} can be seen as a pair {\itshape e = (a,t) } representing an action {\itshape a } recorded and the corresonding timestamp {\itshape t}. Action and timestamp are denoted respectively by $\alpha(e)$ and $\phi(e)$. Events that belong to the same process are grouped into {\itshape traces}. Formally, a trace $T$ is a finite sequence of events $T[1],..., T[n]$, such that $\phi(T[i]) \leq \phi(T[i+1])$ for all  $i \in [1,n)$. A log $L$ is a set of traces, recording the activities performed by a system during a finite number of process executions. We assume here the following hypothesis:
@@ -46,10 +52,47 @@ The process analysis is performed by using the Petri net modelling the process a
 \item All traces are instances of the same process.
 \item For each action there exists a corresponding transition in the net that will be denoted, for simplicity, by the same name of the action.
 \end{itemize}
-The key algorithm expoloited to analyze the Petri net model with respect to the log is the {\itshape log repaly} algorithm. Given a Petri net model and an event log as intput to the algorithm, the output results can be used to check the conformance of traces and to evaluate some performance metrics. For each trace in the log, log replay starts by placing one token in the start place of the net. For each event in the trace the corresponding transition is fires in an {\itshape non blockin way} and the marking of the net is updated. 'Non blocking replay' means that if the log replay execution requires to fire an enabled transition, the missing tokens are created artificially. The output of the log replay of a trace can be represented as an orderd list $R$ of pairs $(tr, i)$, representing that the transition $tr$ has been fired to mimic the event $T[i]$.
+The key algorithm expoloited to analyze the Petri net model with respect to the log is the {\itshape log repaly} algorithm. Given a Petri net model and an event log as intput to the algorithm, the output results can be used to check the conformance of traces and to evaluate some performance metrics. For each trace in the log, log replay starts by placing one token in the start place of the net. For each event in the trace the corresponding transition is fires in an {\itshape non blockin way} and the marking of the net is updated. ``Non blocking replay'' means that if the log replay execution requires to fire an enabled transition, the missing tokens are created artificially. The output of the log replay of a trace can be represented as an orderd list $R$ of pairs $(tr, i)$, representing that the transition $tr$ has been fired to mimic the event $T[i]$.
 \\
 
 In general, there could be exist some transition in the net called {\itshape invisible}. This can happen if the transition models an internal choice that is not visible in the system, or it is used to implement a construct of a more abstract modelling language (BPMN or others). Usually, invisible transitions are considered to be lazy, i.e, when firing a visible transition $t$ corrisponding to an event of the trace, only then the invisibile transition enabling $t$ is fired. However, in this paper, we adopt an other way for handling these transitions and the firing is performed as soon as possible. This allows to carry out some performance measures as explained that ar not possible with the lazy metohode as explained in \cite.\\
 
-The result of log repaly can be used to evaluate conformance and performance of the Petri net model. Conformance problems can be discovered by analyzing the tokens tha have been artificially created {\itshape (the missing tokens)} and the tokens tha were not consumed {\itshape (the remaining tokens)}.
+The result of log repaly can be used to evaluate conformance and performance of the Petri net model. Conformance problems can be discovered by analyzing the tokens that have been artificially created {\itshape (the missing tokens)} and the tokens tha were not consumed {\itshape (the remaining tokens)}.\\
+
+To clarify the conformance analysis technique we exploit the Petri net presented in section \ref{example} with reference to tow traces , $T$ and $T'$, presented respectively in figures \ref{ConfLog} and \ref{NonConfLog}. The log replay execution of the trace $T$, which is compliant with the Petri, terminates with a marking containing one token in the end place \{${p14 \rightarrow 1}$\}, and returns the sequence:
+\begin{equation}
+\begin{split}
+R&=\{(Order\_start,1), (Order\_complete,2),(WarehouseCheck\_start,3), \\
+& (FinancialCheck\_start,4),(WarehouseCheck\_complete,5),\\
+& (FinancialCheck\_complete,6),(t10, 6), (Notify\_start,7), (Notify\_complete,8)\}
+\end{split}
+\end{equation}
+The log replay execution of the trace $T'$ terminates with remaing tokens \{${p8 \rightarrow 1,p14 \rightarrow 1}$\} and a missing token \{${p10 \rightarrow 1}$\}, the sequence returned is:
+\begin{equation}
+\begin{split}
+R'&=\{(Order\_start,1), (Order\_complete,2), (WarehouseCheck\_start), \\
+& (FinancialCheck\_start,3), (WarehouseCheck\_start,4),(t7,5), (t10,6)\\
+& (Notify\_start,6), (Notify\_complete,7)\}
+\end{split}
+\end{equation}
+
+\begin{figure}[H]\label{ConfLog}
+\centering
+\includegraphics[width=400pt,height=40pt]
+{./items/logConforme.pdf}
+\caption{Conforme log example}
+\end{figure}
+
+\begin{figure}[H]\label{NonConfLog}
+\centering
+\includegraphics[width=400pt,height=40pt]
+{./items/logNonConforme.pdf}
+\caption{Non conforme log example}
+\end{figure}
+
+
+
+
+
+
 \end {document}
