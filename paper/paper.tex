@@ -42,13 +42,18 @@ The article is organized as follows. After an introduction to the different form
 
 
 \section{Example}\label{example}
+To clarify what presented in this article the example illustrated in this section will be taken into exam whenever is needed.\\
+
+Commercial organizations usually follow a specific procedure to manage orders received form various clients. In general this procedure represents a business process that includes many differents activities, each of theme can involves diffent departments of the organization. Let us consider a semplifacation of this procedure. For us, the sale process begins with receving an order notification from a client, so the first process activity is simply called ``Order''. After the order receipt the sale process continues with some activities that can be done in a parallel way (since they do not present any dependencies). One of thes is the ``FianancialCheck'' activity during which the order is analysed from a financial point of view (fo example verifying the client situation and solvency). In parallel an activity called ``WarehouseCheck'' is performed. In this phase a check regarding the merchandise requested by the order is done, and in case of a shortage an external order is issued for a supplying, this is done through the activity ``ExternalWarehouse''. After the completion of the  parallel activities, a synchronization is needed before the continuation of the sale procedure. In the semplification considered here the sale process terminates with the activity ``Notify'' in which a result regarding the acceptance of the order is comunicated to the client.\\
+
+The are many differents formalisms for modeling business process, the most popolar are based on flowcharts because of their expressivness (BPMN fo instance). For our purposes, a process is represented by a Petri net which is a matematical model so rigorous and better suited to process mining analysis. It is worth noting that they exist some techniques that allow traduction of a model espressed in a flowchart to a model espressed with a Petri net, more information can be found in \cite{}. The petri net representing the sale process presented in this section is in figure \ref{example}.\\
+
 \begin{figure}[h]\label{pnet}
 \includegraphics[width=360pt]
 {./items/Sales_PN.pdf}
 \caption{Petri net}
 \end{figure}
 
-L'esmepio scelto si ispira ad una procedura che trova applicazione all'interno di organizzazioni a carattere commerciale, si tratta del processo di vendita. In questa sede viene considerata solo una sua semplificazione rispetto a quanto avviene realmente. Per noi, il processo di vendita inizia con l'attività 'notify', in questa fase viene accolto un ordine da parte di un cliente. Dopo la ricezione dell'ordine, vengono condotte alcune attività in parallelo (visto che non presentano alcuna dipendenza tra loro) una di queste è l'attività 'FinancialCheck', in questa fase viene effettuata una valutazione dell'ordine dal punto di vista finanziario, possiamo ad esmepio pensare che vengono condotte delle indagini sulla solvibilità del cliente che ha emesso l'ordine. Parallelamente viene svolta l'attività 'ExternalWarehouse'...
 
 \section{Conformance and Performance Analysis based on Petri nets}\label{Background}
 
@@ -108,7 +113,7 @@ An important performance measure is the activity execution time. This can be ded
 
 It is worth noting that the synchronization time is greater than zero only for places which contain on their post-set transitions depending from other places. For the Petri net in figure \ref{pnet}, the only places which can have a synchronization time not null are $p10$ and $p7$. For instance, the sycronization time is greater than zero for $p10$ in the trace in figure \ref{ConfLog}. That means that, for this particular instance of the process, the branch with the occurance of the activity ``FinancialCheck'' is faster than the branch with activities relating the warehouse.
 
-\section{An approach based on classification for conformance analysis}
+\section{An approach based on classification for conformance analysis}\label{ClassConformance}
 %Supponiamo di avere un numero altissimo di esecuzioni relative al medesimo processo registrate in event log. Supponiamo anche che tutte queste esecuzioni siano state analizzate dal punto di vista della conformance per mezzo del log replay. L'algoritmo di analisi log replay si limita ad individuare come mostrato in sezione \ref{Background} quali sono i punti in cui si verificano errori di conformance, tuttavia, esso non fornisce alcuna informazione sulle cause che generano queste anomalie.\\
 
 %Riuscire ad individuare anomalie è uno degli obiettivo fondamentali nell'analisi dei processi, avere un'idea su quali sono le cause che li generano lo è ancora di più. Questo infatti permette di capire anche come agire per apportare eventuali correzioni. 
@@ -165,5 +170,13 @@ The Petri net reporting the log replay results notice that there are 37 of 250 p
 
 Analysing the log replay results tanking into consideration patterns discoverd with classification technique leads to discover new cases to include in the process model by an extension. In other cases, if the process model is a representation of a fixed procedure to be respected, what discovered with such analysis can be used to take corrective measures. In fact, through a combination of the log replay results and the data patterns rules it may be possible to discover conformance errors cause, and this is fundamental to bring the right corrections. For instance, in the example presented here, if the model process represents a sales procedure that must be respected in any case, an appropriate correction can be taken to correct the wrong behaviour of the staff about consolidate clients. 
 
+COMMENTO: manca un pezzo che spiega come il classificatore puo' essere usato in senso predittivo aumentando la potenza del metodo. Mostrare a titolo di esempio che vantaggio ne possiamo trarre.
 
+\section{An approach based on classification for performance analysis}\label{ClassPerf}
+
+The approach presented in section \ref{ClassConformance} can be used also for performance analysis. Using classification tecnique for discovering how data attribute can influence process performance provides usefull information in analysing and optimazing the process services. For example, discovering data patterns in corrispondence of which some activities need more time for completion than others, helps in making decision about resources distribution to various process activities or in scheduling activities.\\
+
+In addition to the execution time, classification can be used to discover information about more complex performance metrics such as the syncronization time. Processes with parallel activities and syncronizations can often present activities that represent a bottle neck, this leads to increase waiting time of some activities and consequently the completion time of the entire process. In this context, with the approach presented in this article, the objective is discovering rules in the process data that influence the syncronization time. The model builded by classification techinque can be used also in a predicting way, and this is certainly very important in order to optimize performance execution of the process.\\
+
+With reference to the example taken in exam for conformance analysis, in this paragraph the approach based on classification is illustrated for the performance analysis.
 \end {document}
