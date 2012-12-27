@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.2.6)  20 SEP 2012 10:35
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.2.6)  27 DEC 2012 17:25
 entering extended mode
  %&-line parsing enabled.
 **paper.tex
@@ -6,10 +6,13 @@ entering extended mode
 LaTeX2e <2009/09/24>
 Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
 yphenation, italian, loaded.
+(./llncs.cls
+Document Class: llncs 2010/07/12 v2.17 
+ LaTeX document class for Lecture Notes in Computer Science
 (/usr/share/texmf-texlive/tex/latex/base/article.cls
 Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
-(/usr/share/texmf-texlive/tex/latex/base/size11.clo
-File: size11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+(/usr/share/texmf-texlive/tex/latex/base/size10.clo
+File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
 \c@section=\count80
@@ -23,10 +26,110 @@ File: size11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(/usr/share/texmf-texlive/tex/latex/base/inputenc.sty
+(/usr/share/texmf-texlive/tex/latex/tools/multicol.sty
+Package: multicol 2008/12/05 v1.6h multicolumn formatting (FMi)
+\c@tracingmulticols=\count87
+\mult@box=\box26
+\multicol@leftmargin=\dimen103
+\c@unbalance=\count88
+\c@collectmore=\count89
+\doublecol@number=\count90
+\multicoltolerance=\count91
+\multicolpretolerance=\count92
+\full@width=\dimen104
+\page@free=\dimen105
+\premulticols=\dimen106
+\postmulticols=\dimen107
+\multicolsep=\skip43
+\multicolbaselineskip=\skip44
+\partial@page=\box27
+\last@line=\box28
+\mult@rightbox=\box29
+\mult@grightbox=\box30
+\mult@gfirstbox=\box31
+\mult@firstbox=\box32
+\@tempa=\box33
+\@tempa=\box34
+\@tempa=\box35
+\@tempa=\box36
+\@tempa=\box37
+\@tempa=\box38
+\@tempa=\box39
+\@tempa=\box40
+\@tempa=\box41
+\@tempa=\box42
+\@tempa=\box43
+\@tempa=\box44
+\@tempa=\box45
+\@tempa=\box46
+\@tempa=\box47
+\@tempa=\box48
+\@tempa=\box49
+\c@columnbadness=\count93
+\c@finalcolumnbadness=\count94
+\last@try=\dimen108
+\multicolovershoot=\dimen109
+\multicolundershoot=\dimen110
+\mult@nat@firstbox=\box50
+\colbreak@box=\box51
+) (./aliascnt.sty
+Package: aliascnt 2009/09/08 v1.3 Alias counter (HO)
+
+(./remreset.sty))
+\c@chapter=\count95
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 362.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 363.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 364.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 365.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 366.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 367.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 368.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 369.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 370.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 371.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 372.
+\tocchpnum=\dimen111
+\tocsecnum=\dimen112
+\tocsectotal=\dimen113
+\tocsubsecnum=\dimen114
+\tocsubsectotal=\dimen115
+\tocsubsubsecnum=\dimen116
+\tocsubsubsectotal=\dimen117
+\tocparanum=\dimen118
+\tocparatotal=\dimen119
+\tocsubparanum=\dimen120
+\@tempcntc=\count96
+\fnindent=\dimen121
+\c@@inst=\count97
+\c@@auth=\count98
+\c@auco=\count99
+\instindent=\dimen122
+\authrun=\box52
+\authorrunning=\toks14
+\tocauthor=\toks15
+\titrun=\box53
+\titlerunning=\toks16
+\toctitle=\toks17
+\c@theorem=\count100
+\c@case=\count101
+\c@conjecture=\count102
+\c@corollary=\count103
+\c@definition=\count104
+\c@example=\count105
+\c@exercise=\count106
+\c@lemma=\count107
+\c@note=\count108
+\c@problem=\count109
+\c@property=\count110
+\c@proposition=\count111
+\c@question=\count112
+\c@solution=\count113
+\c@remark=\count114
+\headlineindent=\dimen123
+) (/usr/share/texmf-texlive/tex/latex/base/inputenc.sty
 Package: inputenc 2008/03/30 v1.1d Input encoding file
-\inpenc@prehook=\toks14
-\inpenc@posthook=\toks15
+\inpenc@prehook=\toks18
+\inpenc@posthook=\toks19
 
 (/usr/share/texmf-texlive/tex/latex/base/latin1.def
 File: latin1.def 2008/03/30 v1.1d Input encoding file
@@ -40,10 +143,10 @@ Package: ucs 2004/10/17 UCS: Unicode input support
 (/usr/share/texmf-texlive/tex/latex/ucs/data/uni-global.def
 File: uni-global.def 2004/10/17 UCS: Unicode global data
 )
-\uc@secondtry=\count87
-\uc@combtoks=\toks16
-\uc@combtoksb=\toks17
-\uc@temptokena=\toks18
+\uc@secondtry=\count115
+\uc@combtoks=\toks20
+\uc@combtoksb=\toks21
+\uc@temptokena=\toks22
 )
 (/usr/share/texmf-texlive/tex/latex/graphics/color.sty
 Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
@@ -55,14 +158,14 @@ Package color Info: Driver file: pdftex.def on input line 130.
 
 (/usr/share/texmf-texlive/tex/latex/pdftex-def/pdftex.def
 File: pdftex.def 2009/08/25 v0.04m Graphics/color for pdfTeX
-\Gread@gobject=\count88
+\Gread@gobject=\count116
 ))
 (/usr/share/texmf-texlive/tex/latex/graphics/graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texmf-texlive/tex/latex/graphics/keyval.sty
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
-\KV@toks@=\toks19
+\KV@toks@=\toks23
 )
 (/usr/share/texmf-texlive/tex/latex/graphics/graphics.sty
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
@@ -75,12 +178,12 @@ File: graphics.cfg 2009/08/28 v1.8 graphics configuration of TeX Live
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
 )
-\Gin@req@height=\dimen103
-\Gin@req@width=\dimen104
+\Gin@req@height=\dimen124
+\Gin@req@width=\dimen125
 )
 (/usr/share/texmf-texlive/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2000/07/18 v2.13 AMS math features
-\@mathmargin=\skip43
+\@mathmargin=\skip45
 
 For additional information on amsmath, use the `?' option.
 (/usr/share/texmf-texlive/tex/latex/amsmath/amstext.sty
@@ -88,314 +191,294 @@ Package: amstext 2000/06/29 v2.01
 
 (/usr/share/texmf-texlive/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
-\@emptytoks=\toks20
-\ex@=\dimen105
+\@emptytoks=\toks24
+\ex@=\dimen126
 ))
 (/usr/share/texmf-texlive/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d
-\pmbraise@=\dimen106
+\pmbraise@=\dimen127
 )
 (/usr/share/texmf-texlive/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
-\inf@bad=\count89
+\inf@bad=\count117
 LaTeX Info: Redefining \frac on input line 211.
-\uproot@=\count90
-\leftroot@=\count91
+\uproot@=\count118
+\leftroot@=\count119
 LaTeX Info: Redefining \overline on input line 307.
-\classnum@=\count92
-\DOTSCASE@=\count93
+\classnum@=\count120
+\DOTSCASE@=\count121
 LaTeX Info: Redefining \ldots on input line 379.
 LaTeX Info: Redefining \dots on input line 382.
 LaTeX Info: Redefining \cdots on input line 467.
-\Mathstrutbox@=\box26
-\strutbox@=\box27
-\big@size=\dimen107
+\Mathstrutbox@=\box54
+\strutbox@=\box55
+\big@size=\dimen128
 LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
-\macc@depth=\count94
-\c@MaxMatrixCols=\count95
+
+
+Package amsmath Warning: Unable to redefine math accent \vec.
+
+\macc@depth=\count122
+\c@MaxMatrixCols=\count123
 \dotsspace@=\muskip10
-\c@parentequation=\count96
-\dspbrk@lvl=\count97
-\tag@help=\toks21
-\row@=\count98
-\column@=\count99
-\maxfields@=\count100
-\andhelp@=\toks22
-\eqnshift@=\dimen108
-\alignsep@=\dimen109
-\tagshift@=\dimen110
-\tagwidth@=\dimen111
-\totwidth@=\dimen112
-\lineht@=\dimen113
-\@envbody=\toks23
-\multlinegap=\skip44
-\multlinetaggap=\skip45
-\mathdisplay@stack=\toks24
+\c@parentequation=\count124
+\dspbrk@lvl=\count125
+\tag@help=\toks25
+\row@=\count126
+\column@=\count127
+\maxfields@=\count128
+\andhelp@=\toks26
+\eqnshift@=\dimen129
+\alignsep@=\dimen130
+\tagshift@=\dimen131
+\tagwidth@=\dimen132
+\totwidth@=\dimen133
+\lineht@=\dimen134
+\@envbody=\toks27
+\multlinegap=\skip46
+\multlinetaggap=\skip47
+\mathdisplay@stack=\toks28
 LaTeX Info: Redefining \[ on input line 2666.
 LaTeX Info: Redefining \] on input line 2667.
-)
-(/usr/share/texmf-texlive/tex/latex/amsfonts/amsfonts.sty
-Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
-\symAMSa=\mathgroup4
-\symAMSb=\mathgroup5
-LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
-(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
-)
-(/usr/share/texmf-texlive/tex/latex/amsfonts/amssymb.sty
-Package: amssymb 2009/06/22 v3.00
-)
-(/usr/share/texmf-texlive/tex/latex/amscls/amsthm.sty
-Package: amsthm 2004/08/06 v2.20
-\thm@style=\toks25
-\thm@bodyfont=\toks26
-\thm@headfont=\toks27
-\thm@notefont=\toks28
-\thm@headpunct=\toks29
-\thm@preskip=\skip46
-\thm@postskip=\skip47
-\thm@headsep=\skip48
-\dth@everypar=\toks30
 ) (./paper.aux)
 \openout1 = `paper.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-
-(/usr/share/texmf-texlive/tex/latex/ucs/ucsencs.def
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+ (/usr/share/texmf-texlive/tex/latex/ucs/ucsencs.def
 File: ucsencs.def 2003/11/29 Fixes to fontencodings LGR, T3
 )
 (/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count101
-\scratchdimen=\dimen114
-\scratchbox=\box28
-\nofMPsegments=\count102
-\nofMParguments=\count103
-\everyMPshowfont=\toks31
-\MPscratchCnt=\count104
-\MPscratchDim=\dimen115
-\MPnumerator=\count105
-\everyMPtoPDFconversion=\toks32
+\scratchcounter=\count129
+\scratchdimen=\dimen135
+\scratchbox=\box56
+\nofMPsegments=\count130
+\nofMParguments=\count131
+\everyMPshowfont=\toks29
+\MPscratchCnt=\count132
+\MPscratchDim=\dimen136
+\MPnumerator=\count133
+\everyMPtoPDFconversion=\toks30
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 13.
- (/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2009/06/22 v3.00 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 13.
-
-(/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2009/06/22 v3.00 AMS symbols B
-)
-Underfull \hbox (badness 10000) in paragraph at lines 20--23
+Underfull \hbox (badness 10000) in paragraph at lines 21--22
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 20--23
+Underfull \hbox (badness 10000) in paragraph at lines 23--24
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 24--28
+Underfull \hbox (badness 10000) in paragraph at lines 46--47
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 48--49
 
  []
 
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-<./items/Sales_PN.pdf, id=10, 557.08125pt x 183.68625pt>
+<./items/Sales_PN.pdf, id=9, 557.08125pt x 181.67876pt>
 File: ./items/Sales_PN.pdf Graphic file (type pdf)
 
 <use ./items/Sales_PN.pdf>
-(/usr/share/texmf-texlive/tex/latex/ucs/data/uni-0.def
-File: uni-0.def 2004/10/17 UCS: Unicode data U+0000..U+00FF
-)
-Overfull \hbox (13.11874pt too wide) in paragraph at lines 51--52
-[]\OT1/cmr/m/n/10.95 L'esmepio scelto si ispira ad una pro-ce-dura che trova ap
--pli-cazione all'interno
+Overfull \hbox (12.87646pt too wide) in paragraph at lines 54--55
+[][] 
  []
 
 [2 <./items/Sales_PN.pdf>]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 57.
- (/usr/share/texmf-texlive/tex/latex/base/omscmr.fd
+Underfull \hbox (badness 10000) in paragraph at lines 70--72
+
+ []
+
+
+LaTeX Warning: Citation `.' on page 3 undefined on input line 73.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 73--74
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 75--76
+
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 78.
+(/usr/share/texmf-texlive/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 57.
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 78.
 
-Underfull \hbox (badness 10000) in paragraph at lines 60--62
-
- []
-
-
-LaTeX Warning: Citation `.' on page 3 undefined on input line 63.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 63--64
-
- []
-
-[3]
-Underfull \hbox (badness 10000) in paragraph at lines 65--66
-
- []
-
-
-Overfull \hbox (30.82388pt too wide) in paragraph at lines 74--74
+Overfull \hbox (76.79662pt too wide) in paragraph at lines 85--85
 [] 
  []
 
-<./items/logConforme.pdf, id=22, 557.08125pt x 37.13875pt>
+[3]
+Overfull \hbox (18.64359pt too wide) in paragraph at lines 95--95
+[] 
+ []
+
+<./items/logConforme.pdf, id=23, 557.08125pt x 37.13875pt>
 File: ./items/logConforme.pdf Graphic file (type pdf)
 
 <use ./items/logConforme.pdf>
-Overfull \hbox (40.01015pt too wide) in paragraph at lines 87--88
+Overfull \hbox (52.88661pt too wide) in paragraph at lines 100--101
  [][] 
  []
 
-<./items/logNonConforme.pdf, id=23, 557.08125pt x 43.16125pt>
+<./items/logNonConforme.pdf, id=24, 557.08125pt x 43.16125pt>
 File: ./items/logNonConforme.pdf Graphic file (type pdf)
 
 <use ./items/logNonConforme.pdf>
-Overfull \hbox (40.01015pt too wide) in paragraph at lines 94--95
+Overfull \hbox (52.88661pt too wide) in paragraph at lines 108--109
  [][] 
  []
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[4 <./items/logConforme.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 107--108
-
- []
-
-[5 <./items/logNonConforme.pdf>]
-
-LaTeX Warning: Citation `decision mining in business process' on page 6 undefin
-ed on input line 118.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 118--119
+[4 <./items/logConforme.pdf> <./items/logNonConforme.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 121--122
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 120--121
+Underfull \hbox (badness 10000) in paragraph at lines 123--124
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 122--123
+LaTeX Warning: Citation `decision mining in business process' on page 5 undefin
+ed on input line 134.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 134--135
+
+ []
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 141--142
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 149--151
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 154--155
 
  []
 
 [6]
-Overfull \hbox (3.44504pt too wide) in paragraph at lines 128--128
-[]\OT1/cmr/m/n/8 OrdIde| 
- []
-
-
-Overfull \hbox (3.45016pt too wide) in paragraph at lines 128--128
-[]\OT1/cmr/m/n/8 CltIde| 
- []
-
-
-Overfull \hbox (2.0198pt too wide) in paragraph at lines 128--128
-[]\OT1/cmr/m/n/8 WrhsMan| 
- []
-
-
-Overfull \hbox (0.60472pt too wide) in paragraph at lines 128--128
-[]\OT1/cmr/m/n/8 SplIde| 
- []
-
-
-Overfull \hbox (1.91425pt too wide) in paragraph at lines 128--128
-[]\OT1/cmr/m/n/8 OrdResut| 
- []
-
-
-Overfull \hbox (3.48222pt too wide) in paragraph at lines 128--129
-[]\OT1/cmr/m/n/8 Conf| 
- []
-
-
-Overfull \hbox (3.63371pt too wide) in paragraph at lines 130--130
-[]\OT1/cmr/m/n/8 Alexander| 
- []
-
-
-Overfull \hbox (6.91977pt too wide) in paragraph at lines 127--142
- [][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 147--148
+Underfull \hbox (badness 10000) in paragraph at lines 179--180
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 149--150
-
- []
-
-[7] <./items/Sales_tree.pdf, id=43, 557.08125pt x 278.03876pt>
+<./items/Sales_tree.pdf, id=38, 557.08125pt x 278.03876pt>
 File: ./items/Sales_tree.pdf Graphic file (type pdf)
 
 <use ./items/Sales_tree.pdf>
-<./items/Sales_PN_result.pdf, id=44, 557.08125pt x 203.76125pt>
+<./items/Sales_PN_result.pdf, id=39, 557.08125pt x 203.76125pt>
 File: ./items/Sales_PN_result.pdf Graphic file (type pdf)
 
 <use ./items/Sales_PN_result.pdf>
-Overfull \hbox (30.0pt too wide) in paragraph at lines 160--161
+Overfull \hbox (42.87646pt too wide) in paragraph at lines 191--192
 [][] 
  []
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 164--165
+[7 <./items/Sales_tree.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 196--197
 
  []
 
-[8 <./items/Sales_tree.pdf>] [9 <./items/Sales_PN_result.pdf>] (./paper.aux)
+[8 <./items/Sales_PN_result.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 199--200
 
-LaTeX Warning: There were undefined references.
+ []
 
- ) 
+
+Underfull \hbox (badness 10000) in paragraph at lines 208--209
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 210--211
+
+ []
+
+[9]
+Overfull \hbox (1.00043pt too wide) in paragraph at lines 218--218
+[]\OT1/cmr/m/n/7 Alessandro| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 236--237
+
+ []
+
+<./items/Sales_perf_tree.pdf, id=55, 557.08125pt x 207.77625pt>
+File: ./items/Sales_perf_tree.pdf Graphic file (type pdf)
+
+<use ./items/Sales_perf_tree.pdf> [10]
+Underfull \hbox (badness 10000) in paragraph at lines 252--253
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 256--257
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 258--259
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 261--262
+
+ []
+
+[11 <./items/Sales_perf_tree.pdf>] [12] (./paper.aux) ) 
 Here is how much of TeX's memory you used:
- 2741 strings out of 495052
- 34041 string characters out of 1182207
- 96753 words of memory out of 3000000
- 5886 multiletter control sequences out of 15000+50000
- 13274 words of font info for 50 fonts, out of 3000000 for 9000
+ 2269 strings out of 495052
+ 29296 string characters out of 1182207
+ 108234 words of memory out of 3000000
+ 5434 multiletter control sequences out of 15000+50000
+ 7184 words of font info for 26 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 27i,18n,22p,1676b,478s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/sha
-re/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-te
-xlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts
-/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/publi
-c/amsfonts/cm/cmr12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/c
-m/cmr17.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr8.pfb><
-/usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/
-texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-texliv
-e/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on paper.pdf (9 pages, 399316 bytes).
+ 29i,18n,21p,2151b,250s stack positions out of 5000i,500n,10000p,200000b,50000s
+</usr/share/texmf-texliv
+e/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-texlive/fonts/typ
+e1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-texlive/fonts/type1/public/a
+msfonts/cm/cmbx9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/c
+mmi10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></
+usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/tex
+mf-texlive/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-texlive/fo
+nts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/p
+ublic/amsfonts/cm/cmsy7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfon
+ts/cm/cmti10.pfb>
+Output written on paper.pdf (12 pages, 440684 bytes).
 PDF statistics:
- 87 PDF objects out of 1000 (max. 8388607)
+ 99 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
 
