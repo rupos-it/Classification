@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.2.6)  17 SEP 2013 15:47
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.2.6)  17 SEP 2013 18:26
 entering extended mode
  %&-line parsing enabled.
 **paper2.tex
@@ -302,7 +302,7 @@ eck-
 File: ./items/Sales_PN.pdf Graphic file (type pdf)
 
 <use ./items/Sales_PN.pdf>
-Overfull \hbox (12.87646pt too wide) in paragraph at lines 42--43
+Overfull \hbox (12.87646pt too wide) in paragraph at lines 41--42
 [][] 
  []
 
@@ -310,36 +310,34 @@ Overfull \hbox (12.87646pt too wide) in paragraph at lines 42--43
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [2] [3 <./items/Sales_PN.pdf>]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 66.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 64.
 
 (/usr/share/texmf-texlive/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 66.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 64.
 
-<./items/logConforme.pdf, id=22, 557.08125pt x 117.43875pt>
+<./items/logConforme.pdf, id=21, 557.08125pt x 117.43875pt>
 File: ./items/logConforme.pdf Graphic file (type pdf)
 
 <use ./items/logConforme.pdf>
-<./items/logNonConforme.pdf, id=23, 557.08125pt x 117.43875pt>
+<./items/logNonConforme.pdf, id=22, 557.08125pt x 117.43875pt>
 File: ./items/logNonConforme.pdf Graphic file (type pdf)
 
-<use ./items/logNonConforme.pdf>
+<use ./items/logNonConforme.pdf> [4 <./items/logConforme.pdf> <./items/logNonCo
+nforme.pdf>] <./items/classifApproach.pdf, id=34, 557.08125pt x 424.58624pt>
+File: ./items/classifApproach.pdf Graphic file (type pdf)
+
+<use ./items/classifApproach.pdf>
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
+[5]
 
-Overfull \hbox (20.14409pt too wide) in paragraph at lines 95--96
-[]\OT1/cmr/m/n/10 The log re-play of the trace $\OML/cmm/m/it/10 T[]$ \OT1/cmr/
-m/n/10 ter-mi-nates with re-main-ing to-kens \OMS/cmsy/m/n/10 f$[]$g
- []
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[4 <./items/logConforme.pdf>] [5 <./items/logNonConforme.pdf>]
-<./items/classifApproach.pdf, id=37, 557.08125pt x 424.58624pt>
-File: ./items/classifApproach.pdf Graphic file (type pdf)
-
-<use ./items/classifApproach.pdf> [6 <./items/classifApproach.pdf>]
+[6 <./items/classifApproach.pdf>]
 <./items/Sales_tree.pdf, id=43, 557.08125pt x 278.03876pt>
 File: ./items/Sales_tree.pdf Graphic file (type pdf)
 
@@ -352,35 +350,37 @@ Overfull \hbox (12.87646pt too wide) in paragraph at lines 192--193
 [][] 
  []
 
-[7 <./items/Sales_tree.pdf>] [8 <./items/Sales_PN_resultMod.pdf>]
-Underfull \vbox (badness 2103) has occurred while \output is active []
 
- [9]
-[10] (./paper2.bbl [11]) [12] (./paper2.aux) ) 
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[7 <./items/Sales_tree.pdf>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [8 <./items/Sales_PN_resultMod.pdf>] [9] [10] (./paper2.bbl) [11] (./paper2.au
+x) ) 
 Here is how much of TeX's memory you used:
  2867 strings out of 495052
  36099 string characters out of 1182207
- 108784 words of memory out of 3000000
+ 109783 words of memory out of 3000000
  6010 multiletter control sequences out of 15000+50000
  9673 words of font info for 35 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 29i,10n,21p,1578b,611s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/share/texmf-texlive/fonts/t
-ype1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-texlive/fonts/type1/public
-/amsfonts/cm/cmbx12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/c
-m/cmbx9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb
-></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share
-/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texli
-ve/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-texlive/fonts/type
-1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsf
-onts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cms
-y6.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr
-/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texm
-f-texlive/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/share/texmf-texlive/fo
-nts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on paper2.pdf (12 pages, 500351 bytes).
+ 29i,10n,21p,1574b,611s stack positions out of 5000i,500n,10000p,200000b,50000s
+</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/s
+hare/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-
+texlive/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texmf-texlive/font
+s/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/type1/pub
+lic/amsfonts/cm/cmmi9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts
+/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr7.pfb
+></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/
+texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texli
+ve/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-texlive/fonts/typ
+e1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-texlive/fonts/type1/public/am
+sfonts/cm/cmti10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/c
+mti9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on paper2.pdf (11 pages, 497845 bytes).
 PDF statistics:
- 115 PDF objects out of 1000 (max. 8388607)
+ 112 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  31 words of extra memory for PDF output out of 10000 (max. 10000000)
 
