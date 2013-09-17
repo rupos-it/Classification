@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.2.6)  17 SEP 2013 18:26
+=======
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.2.6)  17 SEP 2013 18:40
+>>>>>>> guancio
 entering extended mode
  %&-line parsing enabled.
 **paper2.tex
@@ -302,7 +306,11 @@ eck-
 File: ./items/Sales_PN.pdf Graphic file (type pdf)
 
 <use ./items/Sales_PN.pdf>
+<<<<<<< HEAD
 Overfull \hbox (12.87646pt too wide) in paragraph at lines 41--42
+=======
+Overfull \hbox (12.87646pt too wide) in paragraph at lines 54--55
+>>>>>>> guancio
 [][] 
  []
 
@@ -310,12 +318,18 @@ Overfull \hbox (12.87646pt too wide) in paragraph at lines 41--42
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [2] [3 <./items/Sales_PN.pdf>]
+<<<<<<< HEAD
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 64.
+=======
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 109.
+
+>>>>>>> guancio
 
 (/usr/share/texmf-texlive/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+<<<<<<< HEAD
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 64.
 
 <./items/logConforme.pdf, id=21, 557.08125pt x 117.43875pt>
@@ -336,6 +350,22 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 [5]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
+=======
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 109.
+
+<./items/logConforme.pdf, id=25, 813.0375pt x 106.3975pt>
+File: ./items/logConforme.pdf Graphic file (type pdf)
+
+<use ./items/logConforme.pdf>
+Overfull \hbox (20.14409pt too wide) in paragraph at lines 131--132
+[]\OT1/cmr/m/n/10 The log re-play of the trace $\OML/cmm/m/it/10 T[]$ \OT1/cmr/
+m/n/10 ter-mi-nates with re-main-ing to-kens \OMS/cmsy/m/n/10 f$[]$g
+ []
+
+[4 <./items/logConforme.pdf>] [5]
+<./items/classifApproach.pdf, id=37, 557.08125pt x 424.58624pt>
+File: ./items/classifApproach.pdf Graphic file (type pdf)
+>>>>>>> guancio
 
 [6 <./items/classifApproach.pdf>]
 <./items/Sales_tree.pdf, id=43, 557.08125pt x 278.03876pt>
@@ -346,10 +376,11 @@ File: ./items/Sales_tree.pdf Graphic file (type pdf)
 File: ./items/Sales_PN_resultMod.pdf Graphic file (type pdf)
 
 <use ./items/Sales_PN_resultMod.pdf>
-Overfull \hbox (12.87646pt too wide) in paragraph at lines 192--193
+Overfull \hbox (12.87646pt too wide) in paragraph at lines 236--237
 [][] 
  []
 
+<<<<<<< HEAD
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -381,6 +412,38 @@ mti9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
 Output written on paper2.pdf (11 pages, 497845 bytes).
 PDF statistics:
  112 PDF objects out of 1000 (max. 8388607)
+=======
+[7 <./items/Sales_tree.pdf>] [8 <./items/Sales_PN_resultMod.pdf>] [9] [10]
+(./paper2.bbl) [11] (./paper2.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 2863 strings out of 495052
+ 35979 string characters out of 1182207
+ 108784 words of memory out of 3000000
+ 6007 multiletter control sequences out of 15000+50000
+ 9673 words of font info for 35 fonts, out of 3000000 for 9000
+ 28 hyphenation exceptions out of 8191
+ 29i,10n,21p,1515b,611s stack positions out of 5000i,500n,10000p,200000b,50000s
+</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/sha
+re/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-te
+xlive/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texmf-texlive/fonts/
+type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/type1/publi
+c/amsfonts/cm/cmmi9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/c
+m/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr6.pfb><
+/usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/te
+xmf-texlive/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-texlive/f
+onts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/
+public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfo
+nts/cm/cmsy7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti1
+0.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/
+share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on paper2.pdf (11 pages, 474066 bytes).
+PDF statistics:
+ 113 PDF objects out of 1000 (max. 8388607)
+>>>>>>> guancio
  0 named destinations out of 1000 (max. 500000)
- 31 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
