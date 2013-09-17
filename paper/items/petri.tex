@@ -1,0 +1,124 @@
+\documentclass{article}
+\usepackage{pgf}
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes,snakes,automata,backgrounds,petri}
+\usepackage[latin1]{inputenc}
+
+\begin{document}
+\center
+% apre l'ambiente tikz, definendo un po' di opzioni
+\begin{tikzpicture}[node distance=1.2cm,>=stealth',auto,semithick]
+  % queste son tipo delle macro, definisco lo stile dei plac e delle transition
+  \tikzstyle{place}=[circle,draw,minimum size=6mm]
+  \tikzstyle{transition}=[rectangle,draw,minimum size=4mm]
+
+    % definisco i nodi place
+    %  la roba tra (*) e' l'identificatore che usi te in latex
+    %  dentro le [*] specifichi le opzioni del nodo (non ricordo come mai ce ne sono 2), 
+    %  tra cui il tipo del nodo e il posizionamento, etc..
+    %  dentro le {*} metti l'etichetta da mettere eventualemnte dentro il nodo
+    \node (h)[place,tokens=1] (p1) [label=right:\texttt{p1}]            {};
+    % non so come farlo altrimenti :P, ti c'ho messo un punto per farti capire dove sono i nodi nascosti
+    % basta cancellarlo per rendere questi nodi veramente invisibili
+    \node (h1) [below of=p1] 									     {.}; 
+    \node [place] (p2) [below of=h1, label=right:\texttt{p2}]         {};
+    \node (h2) [below of=p2] 									     {.};
+    \node (h3) [below of=h2] 									     {.};
+    \node (h31) [right of=h3]										 {.};
+    \node (h32) [left of=h3]										 {.};
+    \node [place] (p3) [right of=h31, label=right:\texttt{p3}]   	 {};
+    \node [place] (p4) [left of=h32, label=left:\texttt{p4}]     	 {};
+
+	% definisce i nodi transition e gli archi collegati
+    \node [transition] (os) [below of=p1,label=right:\texttt{Order\_Start}]	   {}
+    % ora definiamo anche due archi relativi al nodo che abbiamo definito
+      edge [pre]                  (p1)  % pre sta' per arco entrante
+      edge [post]                 (p2); % post e' arco uscente
+      
+    \node [transition] (oc) [below of=p2,label=right:\texttt{Order\_Complete}] {}
+      edge [pre]                  (p2)
+      edge [post]				  (p3)
+      edge [post]				  (p4);
+      
+    \node (h4) [below of= p3] {.};
+    \node (h41) [below of= h4] {.};
+    \node (h44) [below of= h41] {.};
+    \node [place] (p5) [below of=h44, label=right:\texttt{p5}] {};
+    
+    \node (h42) [below of=p3] {.};
+    \node (h43) [below of= h42] {.};
+    \node [transition] (fs) [below of=h42, label=right:\texttt{FinancialCheck\_Start}] {}
+    	edge [post]					(p5)
+    	edge [pre]					(p3);
+    	
+    \node (h5) [below of= p5] {.};
+    \node (h51) [below of= h5] {.};
+    \node (h55) [below of= h51] {.};
+    \node [place] (p8) [below of=h55, label=right:\texttt{p8}] {};
+    
+    \node (h52) [below of=h51] {.};
+    \node (h53) [below of=h52] {.};
+    \node [transition] (fc) [below of=h5, label=right:\texttt{FinancialCheck\_Complete}] {}
+    	edge [post]					(p8)
+    	edge [pre]					(p5);
+    
+    
+    \node (h6) [below of= p4] {.};
+    \node [place] (p6) [below of=h6, label=left:\texttt{p6}]  {};
+    
+    \node [transition] (ws) [below of=p4, label=left:\texttt{WarehouseCheck\_Start}] {}
+    	edge [post] 			(p6)
+    	edge [pre]				(p4);
+   
+   \node (h7) [below of=p6] {.};
+   \node [place] (p7) [below of=h7, label=left:\texttt{p7}] {};
+   
+   \node [transition] (wc) [below of=p6, label=left:\texttt{WarehouseCheck\_Complete}] {}
+   		edge [post] 		(p7)
+   		edge [pre] 			(p6);
+   
+   \node (h9) [below of= p7] {.};
+   
+   		
+   \node (h10) [right of=h9] 	{};
+   \node (h11) [below of= h9] 	{};
+   \node [place] (p9) [right of=h11, label=left:\texttt{p9}] {};
+   
+   \node [transition] (exs) [right of= h9, label=right:\texttt{EW\_Start}] {}
+   		edge [pre]		(p7)
+   		edge [post]		(p9);
+   		
+    \node (h12) [below of= h9] {.};    
+    \node (h13) [below of= h12] {.};
+    \node (h14) [below of=h13]{.};
+    
+    \node [place] (p10) [below of=h13, label=below:\texttt{p10}] {};
+    
+    \node [transition] (exc) [right of= h13, label=right:\texttt{EW\_Complete}] {}
+   		edge [pre]		(p9)
+   		edge [post]		(p10);
+   		
+	 \node [transition] (t1) [left of= h12, label=left:\texttt{t1}] {}
+   		edge [pre]		(p7)
+   		edge [post] 	(p10);
+   	%\node [transition] (t2) []
+   	
+   	\node (h15) [below of=p10]		{};
+   	\node (h16) [below of= h15]		{};
+   	\node (h17) [right of=h16] 		{};
+   	\node [transition] (t2) [right of=h17, label= below:\texttt{t2} ] {}
+   		edge [pre]		(p10)
+   		edge [pre] 		(p8);
+   	
+   	\node [place] (p11) [below of=t2, label=right:\texttt{p11} ] {};
+   	%\node [transition] (ns) [below of=]
+
+
+
+   
+   
+	
+    
+\end{tikzpicture}
+
+\end{document}

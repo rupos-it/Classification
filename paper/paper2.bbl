@@ -1,0 +1,74 @@
+\begin{thebibliography}{10}
+
+\bibitem{1}
+R.~A, V.~D. Aalst, and W.~M. P.
+\newblock Decision mining in prom.
+\newblock {\em Business Process Management}, 2006.
+
+\bibitem{10}
+W.~V.~D. Aalst.
+\newblock The application of petri nets to workflow management, 1998.
+
+\bibitem{7}
+M.~L.~G. at~University~of Waikato.
+\newblock \url{http://www.cs.waikato.ac.nz/ml/weka/}, 2011.
+
+\bibitem{12}
+R.~Bruni, A.~Corradini, G.~Ferrari, T.~Flagella, R.~Guanciale, and G.~Spagnolo.
+\newblock Applying process analysis to the italian egovernment enterprise
+  architecture.
+\newblock In M.~Carbone and J.-M. Petit, editors, {\em Web Services and Formal
+  Methods}, volume 7176 of {\em Lecture Notes in Computer Science}, pages
+  111--127. Springer Berlin Heidelberg, 2012.
+
+\bibitem{2}
+R.~Bruni, A.~Corradini, G.~Ferrari, T.~Flagella, R.~Guanciale, and G.~O.
+  Spagnolo.
+\newblock Misurare processi di business.
+\newblock {\em Congresso AICA}, 2011.
+
+\bibitem{14}
+M.~de~Leoni and W.~M.~P. van~der Aalst.
+\newblock Data-aware process mining: discovering decisions in processes using
+  alignments.
+\newblock In S.~Y. Shin and J.~C. Maldonado, editors, {\em SAC}, pages
+  1454--1461. ACM, 2013.
+
+\bibitem{4}
+J.~Muñoz-Gama and J.~Carmona.
+\newblock A fresh look at precision in process conformance.
+\newblock In R.~Hull, J.~Mendling, and S.~Tai, editors, {\em Business Process
+  Management}, volume 6336 of {\em Lecture Notes in Computer Science}, pages
+  211--226. Springer Berlin Heidelberg, 2010.
+
+\bibitem{9}
+OMG.
+\newblock \url{http://www.bpmn.org/}, 2011.
+
+\bibitem{8}
+C.~A. Petri.
+\newblock Fundamentals of a theory of asynchronous information flow.
+\newblock In {\em IFIP Congress}, pages 386--390, 1962.
+
+\bibitem{6}
+E.~T.~U. Process Mining~Group.
+\newblock \url{http://www.processmining.org/prom/start}, 2010.
+
+\bibitem{3}
+A.~Rozinat and W.~van~der Aalst.
+\newblock Conformance checking of processes based on monitoring real behavior.
+\newblock {\em Information Systems}, 33(1):64 -- 95, 2008.
+
+\bibitem{5}
+P.~Tan, M.~Steinbach, and V.~Kumar.
+\newblock {\em Introduction to data mining}.
+\newblock Pearson Addison Wesley, 2006.
+
+\bibitem{13}
+W.~van~der Aalst, A.~Adriansyah, and B.~van Dongen.
+\newblock Replaying history on process models for conformance checking and
+  performance analysis.
+\newblock {\em Wiley Int. Rev. Data Min. and Knowl. Disc.}, 2(2):182--192, Mar.
+  2012.
+
+\end{thebibliography}
