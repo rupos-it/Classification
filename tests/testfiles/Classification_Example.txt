@@ -22,6 +22,8 @@ print("path: "+testFileRoot);
 print("Reading file: "+filebpmn);
 print("Reading file: "+filelog);
 
+log = open_xes_log_file(testFileRoot+"/"+filelog);
+junit.framework.Assert.assertNotNull("Log file is not null", log);
 
 bpmn = import_bpmn_model_from_xpdl_2_1_file(testFileRoot+"/"+filebpmn);
 //bpmn = import_bpmn_model_from_bpmn_2_0_file(testFileRoot+"/"+filebpmn);
@@ -31,8 +33,7 @@ junit.framework.Assert.assertNotNull("xpdl file is not null", bpmn);
 petrinet = bpmn_to_petrinet(bpmn)[0];
 junit.framework.Assert.assertNotNull("PN is not null", petrinet);
 
-log = open_xes_log_file(testFileRoot+"/"+filelog);
-junit.framework.Assert.assertNotNull("Log file is not null", log);
+
 
 print("Log"+log);
 print("PN "+petrinet);

@@ -131,9 +131,10 @@ public class DMPerfPlugin {
 		  }
 		    
 		  Vector<String> values = new Vector<String>();
+		  values.add("NEGLIGIBLE");
+		  values.add("OK");
 		  values.add("HIGH");
 		  values.add("LOW");
-		  values.add("OK");
 		  values.add("?");
 		  Attribute wekaAttr = new Attribute("Sync", values);
 		  wekaAttrList.add(wekaAttr);
@@ -236,10 +237,7 @@ public class DMPerfPlugin {
 				 float synch = PlaceData.get(p).getSynchTime();
 				 if (synch != 0 )
 				 	 synchTimes.add(new Float(synch * 0.001));				 
-				/* if( synch < 0 )
-						 synchTimes.add( new Float(- synch));				  
-			 	*/
-			 }
+			 	}
 			 float maxTime = 0;
 			 for(Float time : synchTimes){
 				 if (time.floatValue() > maxTime )
@@ -250,10 +248,25 @@ public class DMPerfPlugin {
 			 System.out.println(maxTime);
 			 System.out.println("******************");
 			 
-			 if(maxTime  > 10800 ) 
-				 instance.setValue(wekaAttrindex, "HIGH");
-			 else
+			 //Lineare
+			 /*if(maxTime < 10800 ) 
+				 instance.setValue(wekaAttrindex, "NEGLIGIBLE");
+			 else if (maxTime < 21600)
 				 instance.setValue(wekaAttrindex, "LOW");
+			 else if (maxTime < 32400)
+				 instance.setValue(wekaAttrindex, "OK");
+			 else
+				 instance.setValue(wekaAttrindex, "HIGH"); */
+			 
+			 //Logaritmico
+			 if(maxTime < 8100)
+				 instance.setValue(wekaAttrindex, "LOW");
+			 else if(maxTime < 18900)
+				 instance.setValue(wekaAttrindex, "OK");
+			 else 
+				 instance.setValue(wekaAttrindex, "HIGH");
+
+
 			 
 		  		
 		  	instances.add(instance);

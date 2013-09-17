@@ -141,11 +141,18 @@ def externalHook(t, attrs):
  # return l[0]
 
 def choiceHook(l, attrs):
-  if  ( attrs["salesmanager"] == "Mary" and attrs["clientType"] == "consolidate"):
+  noise = random.randint(1,3)
+  if( attrs["salesmanager"] == "Mary" and attrs["clientType"] == "consolidate" and noise!=3):
         return l[1]
-  return l[0]
-
-
+  #return l[0]
+  else:
+   noise = random.randint(1,9)
+   if( noise != 5 ):
+    return l[0]
+   else: 
+    return l[1]
+  
+	
 process = Sequence([ 
 		Entry("Order", orderHook),
 		Choice([
@@ -175,4 +182,4 @@ process = Sequence([
 		])
 	
 
-generate(process, 250)
+generate(process, 300)

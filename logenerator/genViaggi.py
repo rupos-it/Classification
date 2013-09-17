@@ -54,7 +54,7 @@ import random
 # 	return t0, t1
 
 def orderHook(t, attrs):
-    products = ["bottles", "boxes"]
+    products = ["bottles", "boxes", "equipment"]
     attrs["product"] = products[random.randint(0, len(products)-1)]
     customers = ["A", "B", "C"]
     attrs["customer"] = customers[random.randint(0, len(customers)-1)]
@@ -119,6 +119,14 @@ def externalHook(t, attrs):
     delta1 = random.randint(min_t * 60*60, max_t * 60*60)
     return t0, t1 + delta1
 
+#def choiceHook(l, attrs):
+    #if  attrs["urg"] == "Yes":
+    #    return l[1]
+    #return l[0]
+#  if  ( attrs["product"] == "equipment" ):
+  #      return l[1]
+ # return l[0]
+
 process = Sequence([ 
 		Entry("Order", orderHook),		
 		Par([ Entry("FinancialCheck", financialHook),
@@ -135,4 +143,4 @@ process = Sequence([
 
 		
 
-generate(process, 1)
+generate(process, 250)
