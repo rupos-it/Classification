@@ -16,6 +16,7 @@
 \author{Hind Chfouka, Andrea Corradini, Roberto Guanciale}
 \institute{Department of Computer Science, Università di Pisa}
 \date{today}
+
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -28,23 +29,11 @@ Today, many Information Systems that integrate the concept of business process r
 The motivation of this paper is based on the observation that existing event logs are rich of data, and this data is used only in part by the existing process analysis techniques. Since data is considered a valid source of knowledge, developing a technique based on data analysis can provide advantages for  process analysis.
 Therefore, our goal consists of finding a way for transforming the data recorded during the process activities in knowledge useful for the analysis. To this aim, one possible approach is to try to understand how data may influence the process behavior. In particular, it is interesting to understand how may the data influence the conformance and performance of the process executions. Exploring this influence can provide qualitative information about the causes of possible anomalies in the process behavior, facilitating the task of taking corrective measures.
 
-In order to analyze data arising from event logs, in this paper we present an approach based on \emph{data mining} \cite{5}. In particular, we exploit \emph{classification} techniques to find patterns on data in presence of which conformance errors occur. Next, the same approach is extended to consider the process behavior in terms of performance to discover how data influences the process efficiency. Classification is a well-known \emph{machine learning} technique, and it consists of identifying to which category among a given set a new observation belongs. This is done on the basis of a training set of data containing observations whose category membership is known.
+In order to analyze data arising from event logs, in this paper we present an approach based on \emph{data mining} \cite{5}. In particular, we exploit \emph{classification} techniques to find patterns on data in presence of which conformance errors occur. Next, the same approach is extended to consider the process behavior in terms of performance to discover how data influences the process efficiency. Classification is a well-known \emph{machine learning} technique, and it consists of identifying to which category, among a given set, a new observation belongs. This is done on the basis of a training set of data containing observations whose category membership is known.
 
-Classification techniques in the Process Mining field have already been explored. In \cite{1} the idea is exploring how data influences the case routing of process flow execution. In this contribution the goal is to strengthen the use of data analysis techniques for the benefit of process analysis. This is done by studying how data may influence, in general, the overall process behavior.
+Classification techniques in the Process Mining field have already been explored \cite{1}\cite{14}. In \cite{1} the idea is exploring how data influences the case routing of process flow execution. In this contribution the goal is to strengthen the use of data analysis techniques for the benefit of process analysis. This is done by studying how data may influence, in general, the overall process behavior.
 
-After the presentation of a case study in Section \ref{example},
-Section \ref{Background} introduces some background concepts about
-process analysis. First the algorithm log replay is briefly described,
-then conformance and performance analysis are presented. Both kind of
-analysis are illustrated through the business process of Section
-\ref{example}. In Section \ref{ClassifApproach} our approach to
-process analysis based on classification is presented. First a few
-basic concepts about the classification technique are described, next
-the conformance analysis based on classification is presented in
-detail through an illustration with our case study, moreover a
-possible extension of the approach for performance analysis is
-presented. Finally, Section \ref{implementation} describes the
-implementation of our approach provided as \emph{ProM6}\cite{6} plug-ins, as well the methodology to follow in the process analysis based on classification.
+After the presentation of a case study in Section \ref{example}, Section \ref{Background} introduces some background concepts about process analysis. First the algorithm log replay is briefly described, then conformance  analysis is presented. This analysis is illustrated through the business process of Section \ref{example}. In Section \ref{ClassifApproach} our approach to process analysis based on classification is presented. First a few basic concepts about the classification technique are described, next the conformance analysis based on classification is presented in detail through an illustration with our case study, moreover a possible extension of the approach for performance analysis is presented. Finally, Section \ref{implementation} describes the implementation of our approach provided as \emph{ProM6}\cite{6} plug-ins, as well the methodology to follow in the process analysis based on classification.
 
 \section{The case study: a sale business process}\label{example}
 A business process can be seen as a collection of activities occurring within an organization that lead to a specific goal. There are several formalisms for representing business processes. In this paper we represent them using Petri nets \cite{8}\cite{10} since this make possible exploiting some existing process analysis techniques that are based on Petri nets. However, in the business management context, Petri nets can be not expressive enough and usually process models are presented as flowcharts, in particular using the standard for the business process modeling: BPMN (Business Process Model and Notation) \cite{9}. Transforming a BPMN model into a Petri net is possible thanks to a mapping technique presented in \cite{12}\cite{2}.
@@ -56,14 +45,14 @@ A business process can be seen as a collection of activities occurring within an
 \end{figure}
 
 Figure \ref{pnet} presents the Petri net model for a sale
-process.
-\footnote{
+process
+\footnote{\small{
 The Petri net of Figure \ref{pnet} is obtained by
 transforming a BPMN model using the algorithm of \cite{2}, and mapping
 each activity to a pair of start/end transitions. The resulting net
 has been simplified by removing the unnecessary \emph{invisible
   transitions} used to encode the \emph{Join} or \emph{Fork} gateway \cite{2}.
-}
+}}.
 This business process abstractly represents a fragment of the
 procedure followed in a commercial organization for managing orders
 received from clients. In general this procedure includes several
@@ -78,8 +67,7 @@ verifying the financial situation of the client). Concurrently, the
 \emph{WarehouseCheck} activity checks the availability of merchandise
 requested by the order and, in case of a shortage, starts a supplying procedure. This is done through the activity \emph{ExternalWarehouse}. After the completion of the  parallel activities, a synchronization is needed before continuing the sale procedure with the final activity called \emph{Notify}, by which a result regarding the acceptance of the order is communicated to the client.
 
-<<<<<<< HEAD
-Note that the Petri net of Figure \ref{pnet} is obtained by transforming a BPMN model using the algorithm described in \cite{2}, and mapping each activity to a pair of start/end transitions. The resulting net has been simplified by removing the unnecessary \emph{invisible transitions} used to encode e.g. the \emph{Join} or \emph{Fork} gateway \cite{2}.
+%Note that the Petri net of Figure \ref{pnet} is obtained by transforming a BPMN model using the algorithm described in \cite{2}, and mapping each activity to a pair of start/end transitions. The resulting net has been simplified by removing the unnecessary \emph{invisible transitions} used to encode e.g. the \emph{Join} or \emph{Fork} gateway \cite{2}.
 
 \section{Process Analysis}\label{Background}
 %Process analysis is performed using the Petri net representing the process and an event log recording the related executions, also called \emph{process instances}. The basic building blocks of event logs are events. An event {\itshape e} can be seen as a pair {\itshape e = (a,t) } representing an action {\itshape a } recorded and the corresponding timestamp {\itshape t}. Action and timestamp are denoted respectively by $\alpha(e)$ and $\phi(e)$. Events that belong to the same process are grouped into {\itshape traces}. Formally, a trace $T$ is a finite sequence of events $T[1],..., T[n]$, such that $\phi(T[i]) \leq \phi(T[i+1])$ for all  $i \in [1,n)$. A log $L$ is a set of traces, recording the activities performed by a system during a finite number of process executions.
@@ -88,27 +76,6 @@ Process analysis is performed using the Petri net representing the process and a
 \item All traces are instances of the same process.
 \item For each action there exist two corresponding transitions in the net that will be denoted, for simplicity, by the same name of the action.
 \end{itemize}
-=======
-
-\section{Process Analysis}\label{Background}
-
-Process analysis is performed using the Petri net representing the
-process and an event log recording the related executions, also called
-\emph{process instances}. The basic building blocks of event logs are
-events. An event {\itshape e} can be seen as a pair {\itshape e =
-  (a,t) } representing an action {\itshape a } observer at the
-timestamp {\itshape t}. Action and timestamp are denoted respectively
-by $\alpha(e)$ and $\phi(e)$. Events that belong to the same process
-are grouped into {\itshape traces}. Formally, a trace $T$ is a finite
-sequence of events $T[1],..., T[n]$, such that $\phi(T[i]) \leq
-\phi(T[i+1])$ for all  $i \in [1,n)$. A log $L$ is a set of traces,
-recording the activities performed by a system during a finite number
-of process executions. In this paper we assume that
-(i) all traces are instances of the same process
-and
-(ii) for each action there exists a corresponding transition (labeled
-with the same name of the action) in the Petri net.
->>>>>>> guancio
 
 \subsection{Log replay algorithm}\label{logreplayAlg}
 The key algorithm exploited to analyze a Petri net model with respect to the log is the {\itshape log replay} algorithm \cite{13}\cite{3}\cite{4}. Given a Petri net model and an event log as input to the algorithm, the output results can be used to check the conformance of traces and to evaluate some performance metrics. For each trace in the log, the algorithm starts by placing one token in the start place of the net. For each event in the trace the corresponding transition is fired assuming a {\itshape non-blocking} behavior of the algorithm, then the marking of the net is updated. Non-blocking replay means that whenever a firing of a disabled transition is needed, the algorithm enables the transition either creating artificial tokens in the pre-set or, if possible, firing some invisible transitions; the non-determinism in this procedure is resolved with a suitable cost function. %The output of a log replay execution on a trace can be represented as an ordered list $R$ of pairs $(tr, i)$, representing that the transition $tr$ has been fired to mimic the event $T[i]$.
@@ -152,7 +119,7 @@ R'&=\{(Order\_start,1), (Order\_complete,2), (WarehouseCheck\_start,3), \\
 \end{comment}
 
 
-
+\begin{comment}
 \subsection{Performance analysis}\label{PerformanceAnalysis}
 The performance of a process can be analyzed by exploiting the log
 replay results. Since the logs contain timestamps, the log replay can
@@ -164,7 +131,7 @@ be used to compute performance measures of the process my measuring the elapsed 
 \end{itemize}
 
 The duration of an activity is an important performance measure as well, and it is given by the waiting time of the only place between the start and the complete transition of the activity.
-
+\end{comment}
 \begin{comment}
 To clarify the metrics evaluated by this technique, as done with conformance analysis, we exploit the Petri net  presented in Section \ref{example} and the trace T presented in Figure \ref{ConfLog}. The replay starts with firing the transition $Order\_start$ at time $0s$, so a token arrives at $p2$ at time $0s$. After $45 min$ the token in $p2$ is consumed and the transition $Order\_complete$ is fired, so $tw(p2)=45min$, and a token arrives at $p3$ and $p4$. At the time $1h:5min:25s$ the transition $WarhouseCheck\_start$ is fired, thus $tw(p4)=20min+25sec$ and a token is produced at $p6$. At the time $1h:10min:20s$ the transition $FinancialCheck\_start$ is fired and a token is produced at $p5$, so $tw(p3)=25min+20s$. After $2h:30min:20s$ from the replay start the transition $Financial\_complete$ is fired, hence we have $tw(p5)=1h+20min$ and a token is produced at $p8$. At time $3h:10min:20s$ the firing of the transition $WarehouseCheck\_complete$ is executed, so $tw(p6)=2h+4min+55s$ and a token is produced at $p7$. After $15 min$ the invisible transition $t1$ is fired and a token is produced at $p10$. At this point the transition $t2$ is enabled, so its firing is now possible and a token is produced at $p11$. Notice that $tsc(p8)=40min, tsc(p10)=0s$. At the time $3h:25min:20s$ the transition $Notify\_start$ is fired and a token is produced in $p12$, after $4min+4sec$ the transition $Notify\_complete$ is fired and $tw(p12) = 4min+40s$.
 
@@ -185,10 +152,7 @@ Employing data mining techniques for process analysis is encouraged by the prese
 
 \subsection{Classification: basic concepts}\label{classifBasicConcept}
 
-In a classification problem \cite{5}, data is represented by a
-collection of records (called instances), and each of them is
-characterized by a tuple $(\mathbf{x},y)$, where $\mathbf{x}$ is a set
-of attributes and $y$ is a special attribute called \emph{target attribute}. The target denotes the class to which a record belongs. The goal is to learn a classification model that maps each attribute set $\mathbf{x}$ to one of the predefined class labels $y$.
+In a classification problem \cite{5}, data is represented by a collection of records (called instances), and each of them is characterized by a tuple $(\mathbf{x},y)$, where $\mathbf{x}$ is a set of attributes and $y$ is a special attribute called \emph{target attribute}. The target denotes the class to which a record belongs. The goal is to learn a classification model that maps each attribute set $\mathbf{x}$ to one of the predefined class labels $y$.
 
 A classification model can be useful for a descriptive purpose: it provides an explanatory tool to distinguish between objects of different classes, and for a predictive purpose: the model can be used to predict the class label of new records. In this way the model acts as a black box that automatically assigns a class label to an attribute set of a new record.
 
@@ -205,6 +169,7 @@ There is a general approach to solve a classification problem from a dataset, th
 Figure \ref{figclassApproach} summarizes the general approach for solving a classification problem \cite{5}. A \emph{Training set} consisting of records whose class labels are known must be provided to a learning algorithm, and it is used to build a classification model. This model is then applied to a \emph{test set}, which consists of records with unknown class labels. This application allows the estimation of the \emph{model accuracy} that can be done in different ways. The simple one consists in computing the accuracy as the number of the records correctly predicted over the total number of records in the test set.
 
 Many classification models could be used for a classification problem. For our purpose we choose the \emph{decision tree} model since the rules detected by the classification are shown explicitly. This fact is fundamental for giving an explanation to the process behavior based on the process data values. Furthermore, this choice is encouraged by the simplicity of decision trees. In a decision tree, a class label (possible value of the attribute target) is assigned to each leaf node. The non-terminal nodes, which include the root and the internal nodes, contain attribute test conditions to filter records that have different characteristics.
+
 \begin{comment}
 In principle, there are exponentially many decision trees that can be constructed from a given set of attributes. While some of the trees are more accurate than others, finding the optimal tree is computationally infeasible because of the exponential size of the search space. However, efficient algoritms have been developed to induce a reasonably accurate decision tree in a reasonable amount of time. These algorithms usually employ a greedy strategy that grows a decision tree by making a series of decisions about which attribute to use for partioning the data. For instance Hunt's algorithm is one of them and it represents the basis of many existing decision tree induction algorithms, including $C4.5$ algorithm used for our purposes.
 \end{comment}
@@ -257,14 +222,9 @@ From the analysis done for the sales process based on both classification and lo
 The classifier constructed with this approach can be used also in a predictive way. Given a new trace recording a process execution, in order to perform the conformance checking to the process model, the decision tree can be used to predict the conformance result. This bring an advantage in terms of the time required by the analysis since the log replay algorithm takes more time than the one needed by a decision tree to classify a new instance. Moreover, it is worth noting that whenever the set of attributes needed for the classification is known before the completion of a process execution, it can be interesting to predict the conformance result of the execution and avoid the errors that could possibly happen.
 
 \subsection{Extension of the approach for Performance Analysis}\label{ClassPerf}
-<<<<<<< HEAD
-
 Performance analysis of a process can be carried exploiting log replay. Since a log contains timestamps, during the replay of a trace it is possible to compute (for each place of the Petri net model) some performance measures such as: \emph{synchronization time} (i.e. time interval between arrival of a token in the place and enabling of a transition in the post-set of the place), \emph{sejour time} (i.e. the time interval between arrival and departure of tokens) and \emph{waiting time} (i.e. the time interval between enabling of a transition in the post-set of the place and token departure).
 
 Performing an analysis based on the measures computed by log replay gives just a \emph{quantitative} information about the process performance. In order to understand the \emph{causes} of performance anomalies that can affect the process behavior, one can explore the process data. Discovering how data attribute can influence process performance provides useful information in analyzing and optimizing the process services. For example, discovering data patterns in correspondence to which some activities need more time for completion than others, helps in making decisions about resources distribution to the process activities or in scheduling activities. In addition to the completion time, one could analyze a process under more complex performance metrics such as the synchronization time. A process with parallel branches and synchronizations can present bottleneck activities that lead to increase the execution time of other activities and consequently the completion time of the entire process. To find out the possible data influences on synchronization time, the approach presented in Section \ref{ClassConformance} for conformance analysis through classification can be easily extended to performance analysis. For example, a classification problem can be formulated for each synchronization point of the process. In this way, the classifier obtained in correspondence to a synchronization point classifies the process instances based on their attribute value and regarding the synchronization time of the point taken into exam. 
-=======
-Discovering how data attribute can influence process performance provides useful information in analyzing and optimizing the process services. For example, discovering data patterns in correspondence to which some activities need more time for completion than others, helps in making decisions about resources distribution to the process activities or in scheduling activities. In addition to the completion time, one could analyze a process under more complex performance metrics such as the \emph{synchronization time}. A process with parallel branches and synchronizations can present bottleneck activities that lead to increase the execution time of other activities and consequently the completion time of the entire process. To find out the possible data influences on synchronization time, the approach presented in Section \ref{ClassConformance} for conformance analysis through classification can be easily extended to performance analysis. For example, a classification problem can be formulated for each synchronization point of the process. In this way, the model obtained in correspondence to a synchronization point classifies the process instances based on their attribute value and regarding the synchronization time of the point taken into exam. 
->>>>>>> guancio
 
 \begin{comment}
 \begin{table}[!h]
