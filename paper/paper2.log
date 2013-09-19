@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.2.6)  17 SEP 2013 18:40
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.4.27)  19 SEP 2013 22:05
 entering extended mode
  %&-line parsing enabled.
 **paper2.tex
 (./paper2.tex
 LaTeX2e <2009/09/24>
 Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
-yphenation, italian, loaded.
+yphenation, loaded.
 (./llncs.cls
 Document Class: llncs 2010/07/12 v2.17 
  LaTeX document class for Lecture Notes in Computer Science
@@ -159,7 +159,7 @@ File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 Package color Info: Driver file: pdftex.def on input line 130.
 
 (/usr/share/texmf-texlive/tex/latex/pdftex-def/pdftex.def
-File: pdftex.def 2009/08/25 v0.04m Graphics/color for pdfTeX
+File: pdftex.def 2010/03/12 v0.04p Graphics/color for pdfTeX
 \Gread@gobject=\count116
 ))
 (/usr/share/texmf-texlive/tex/latex/graphics/graphicx.sty
@@ -333,32 +333,32 @@ m/n/10 ter-mi-nates with re-main-ing to-kens \OMS/cmsy/m/n/10 f$[]$g
 File: ./items/classifApproach.pdf Graphic file (type pdf)
 
 <use ./items/classifApproach.pdf> [6 <./items/classifApproach.pdf>]
-<./items/Sales_tree.pdf, id=43, 557.08125pt x 278.03876pt>
-File: ./items/Sales_tree.pdf Graphic file (type pdf)
-
-<use ./items/Sales_tree.pdf>
-<./items/Sales_PN_resultMod.pdf, id=44, 557.08125pt x 213.79875pt>
+<./items/Sales_PN_resultMod.pdf, id=43, 557.08125pt x 213.79875pt>
 File: ./items/Sales_PN_resultMod.pdf Graphic file (type pdf)
 
 <use ./items/Sales_PN_resultMod.pdf>
-Overfull \hbox (12.87646pt too wide) in paragraph at lines 236--237
+Overfull \hbox (12.87646pt too wide) in paragraph at lines 243--244
 [][] 
  []
 
-[7 <./items/Sales_tree.pdf>] [8 <./items/Sales_PN_resultMod.pdf>] [9] [10]
-(./paper2.bbl) [11] (./paper2.aux)
+[7 <./items/Sales_PN_resultMod.pdf>]
+<./items/Sales_tree.pdf, id=50, 557.08125pt x 278.03876pt>
+File: ./items/Sales_tree.pdf Graphic file (type pdf)
+
+<use ./items/Sales_tree.pdf> [8 <./items/Sales_tree.pdf>] [9] (./paper2.bbl
+[10]) [11] (./paper2.aux)
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 2863 strings out of 495052
- 35979 string characters out of 1182207
- 108784 words of memory out of 3000000
+ 2864 strings out of 495061
+ 36016 string characters out of 1182621
+ 109056 words of memory out of 3000000
  6007 multiletter control sequences out of 15000+50000
  9673 words of font info for 35 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 29i,10n,21p,1515b,611s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 29i,10n,21p,1501b,611s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/sha
 re/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-te
 xlive/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texmf-texlive/fonts/
@@ -372,7 +372,7 @@ public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfo
 nts/cm/cmsy7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti1
 0.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/
 share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on paper2.pdf (11 pages, 474066 bytes).
+Output written on paper2.pdf (11 pages, 472669 bytes).
 PDF statistics:
  113 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

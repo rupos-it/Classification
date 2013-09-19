@@ -190,14 +190,80 @@ There is a general approach to solve a classification problem from a dataset, th
 \label{figclassApproach}
 \end{figure}
 
-Figure \ref{figclassApproach} summarizes the general approach for solving a classification problem \cite{5}. A \emph{Training set} consisting of records whose class labels are known must be provided to a learning algorithm, and it is used to build a classification model. This model is then applied to a \emph{test set}, which consists of records with unknown class labels. This application allows the estimation of the \emph{model accuracy} that can be done in different ways. The simple one consists in computing the \emph{performance} as the number of the records correctly predicted over the total number of records in the test set.
+Figure \ref{figclassApproach} summarizes the general approach for
+solving a classification problem \cite{5}. A \emph{Training set}
+consisting of records whose class labels are known must be provided to
+a learning algorithm, and it is used to build a classification
+model. This model is then applied to a \emph{test set}, which consists
+of records with unknown class labels.
+This step allows to  estimate the \emph{model accuracy} using one of
+the standard approaches: e.g. the accuracy can be represented by the
+fraction of number the records correctly predicted and the total number of records in the test set.
 
-Many classification models could be used for a classification problem. For our purpose we choose the \emph{decision tree} model since the rules detected by the classification are shown explicitly. This fact is fundamental for giving an explanation to the process behavior based on the process data values. Furthermore, this choice is encouraged by the simplicity of decision trees. In a decision tree, a class label (possible value of the attribute target) is assigned to each leaf node. The non-terminal nodes, which include the root and the internal nodes, contain attribute test conditions to filter records that have different characteristics.
+Many classification models can be applied to a classification
+problem. For our purpose we choose the \emph{decision tree} model
+since the rules detected by the classification are shown explicitly,
+providing an overview of how process data affects the
+process behavior. Furthermore, this choice is encouraged by the simplicity of decision trees. In a decision tree, a class label (possible value of the attribute target) is assigned to each leaf node. The non-terminal nodes, which include the root and the internal nodes, contain attribute test conditions to filter records that have different characteristics.
 \begin{comment}
 In principle, there are exponentially many decision trees that can be constructed from a given set of attributes. While some of the trees are more accurate than others, finding the optimal tree is computationally infeasible because of the exponential size of the search space. However, efficient algoritms have been developed to induce a reasonably accurate decision tree in a reasonable amount of time. These algorithms usually employ a greedy strategy that grows a decision tree by making a series of decisions about which attribute to use for partioning the data. For instance Hunt's algorithm is one of them and it represents the basis of many existing decision tree induction algorithms, including $C4.5$ algorithm used for our purposes.
 \end{comment}
 \subsection{Classification for Conformance Checking}\label{ClassConformance}
-In order to identify the possible causes of non-conformance, a classification problem can be formulated. The classification dataset is extracted from the process data: for each process instance, one will extract some data that will be included as a record in the dataset. For the process presented in Section \ref{example}, a record is characterized by the following attribute set: an instance identifier, a client identifier, the client typology (new or consolidated client), the sales manager responsible for the order, the financial officer who conducts the financial evaluation activities, the warehouseman responsible for the warehouse checking, the supplying responsible name in case of a provision, and finally the result communicated to the client for the order issued. The conformance result for the process instance provides an additional and important data which takes the role of the target attribute. All these attributes are discrete and contribute to build the dataset presented in table \ref{tab:SaleData} of the classification problem. Note that, since the goal of this paper is just to illustrate an approach for exploiting process data in the process analysis, the data presented here is just a synthetic data that was generated with some noise to emulate a real situation.
+In order to identify the possible causes of non-conformance, a
+classification problem can be formulated. The classification dataset
+is extracted from the process data: for each process instance,
+relevant information is  extract and included as a record in the
+dataset.
+For the process presented in Section \ref{example}, a record is
+characterized by the following attributes: an instance identifier, a
+client identifier, the client typology (new or consolidated client),
+the sales manager responsible for the order, the financial officer who
+conducts the financial evaluation activities, the warehouseman
+responsible for the warehouse checking, the supplying responsible name
+in case of a provision, and finally the result communicated to the
+client for the order issued. The conformance result for the process
+instance provides an additional and important data, which takes the
+role of the target attribute. 
+All these attributes are discrete and contribute to build the dataset
+presented in table \ref{tab:SaleData} of the classification
+problem. Notice that, since our goal is to illustrate the application
+of existing data mining techniques to process analysis rather then the
+evaluation of a new data mining algorithm, we use synthetic data that
+are generated to emulate a realistic process executions.
+
+In order to build the classification problem, the attributes characterizing the
+process are extracted from the log, while the conformance attribute is
+computed using the conformance checking algorithm.
+The Petri net in Figure \ref{replayResult}  summarizes the
+conformance analysis executed on the event log:
+edges are labeled with the number of activations done,
+places are labeled with the number of remaining and missing tokens.
+\begin{figure}[h]
+\includegraphics[width=360pt]
+{./items/Sales_PN_resultMod.pdf}
+\caption{Petri net: conformance results.}
+\label{replayResult}
+\end{figure}
+
+The resulting data highlight  that there are 37 out of 250 process
+executions with conformance errors.
+The presence of 37 missing tokens in $p11$ represents a forced
+execution of  transition \emph{Notify\_start}.
+In order to provide an interpretation for this results, we have to
+take into account the non-blocking behavior of the log replay
+algorithm. In this case, the 37 missing tokens in $p11$ represents the
+number of times that that the replay the algorithm failed to mimic the
+event \emph{Notify\_start} since the transition associated to the
+event was not enabled. 
+Moreover, 37 remaining tokens in place $p3$ indicates the number of
+times that the instances financial activities were not performed.
+Taking into account the application scenario, we can conclude that 
+37 instances of the process are not compliant with sale policy since
+they did not executed the financial activity.
+
+% This situation is possible only if the invisible transition $t2$ is not enabled. Now, if $t2$ is not enabled that means that there are no tokens in the places $p8$ or $p10$. But notice that there are 21 remaining tokens in the place $p10$, so the transition $t2$ is not enabled for those $37$ instances because the place $p8$ does not have any token. Moreover, the Petri net in Figure \ref{replayResult} shows 37 remaining tokens in place $p3$, so we can deduce that in those instances financial activities were not performed. From these facts, we can conclude that the conformance problems presented in  37 instances are due to a missing execution of the financial activity checking. On the other hand, the decision tree reports that the instances with conformance problems are made by consolidate clients.
+
+
 
 \begin{table}[!h]
 \scriptsize{
@@ -221,7 +287,7 @@ In order to identify the possible causes of non-conformance, a classification pr
 \label{tab:SaleData}
 \end{table}
 \normalsize
-Through existing data mining tools for classification, it is possible to build a decision tree as a classification model for the sale process example. Starting from a given event log, the attributes characterizing the process are extracted and all the resources needed for the classification algorithm employed are produced. The resulting decision tree is presented in Figure \ref{salesDecTree}.
+
 
 \begin{figure}[h]
 \centering
@@ -230,19 +296,32 @@ Through existing data mining tools for classification, it is possible to build a
 \caption{Decision tree for the conformance analysis.}
 \label{salesDecTree}
 \end{figure}
-The resulting decision tree describes a data pattern in correspondence to which a process instance could present conformance errors: order managed by the sales manager \emph{Mary} and received from consolidate clients of the organization may not respect the standard sales procedure. To get more significant information for our analysis, it is useful to relate what is noticed by the decision tree with the log replay results. Figure \ref{replayResult} presents a Petri net that summarizes the conformance analysis conducted on instances recorded in the event log taken in exam. Arcs are labeled with the number of activations done. Places, whenever they present some remaining or missing tokens, are labeled with the number of these tokens.
-\begin{figure}[h]
-\includegraphics[width=360pt]
-{./items/Sales_PN_resultMod.pdf}
-\caption{Petri net: conformance results.}
-\label{replayResult}
-\end{figure}
 
-The Petri net in Figure \ref{replayResult} shows that there are 37 out of 250 process executions with conformance errors. The presence of 37 missing tokens in $p11$ signals a forced execution of  transition \emph{Notify\_start}. In order to provide an interpretation for this results, we have to take into account the non-blocking behavior of the log replay algorithm. In this case, the 37 missing tokens in $p11$ certifies that during the replay the algorithm needs to mimic the event \emph{Notify\_start} but the transition associated to the event is not enabled in the marking reached by the net, so the algorithm creates artificial tokens for completing the trace replay. This situation is possible only if the invisible transition $t2$ is not enabled. Now, if $t2$ is not enabled that means that there are no tokens in the places $p8$ or $p10$. But notice that there are 21 remaining tokens in the place $p10$, so the transition $t2$ is not enabled for those $37$ instances because the place $p8$ does not have any token. Moreover, the Petri net in Figure \ref{replayResult} shows 37 remaining tokens in place $p3$, so we can deduce that in those instances financial activities were not performed. From these facts, we can conclude that the conformance problems presented in  37 instances are due to a missing execution of the financial activity checking. On the other hand, the decision tree reports that the instances with conformance problems are made by consolidate clients.
+The results of the conformance checking enable the usage of the
+existing data mining tools, allowing us to mine the decision tree in Figure \ref{salesDecTree} as classification model for the sale process.
+The resulting decision tree describes a data pattern in correspondence to which a process instance could present conformance errors: order managed by the sales manager \emph{Mary} and received from consolidate clients of the organization may not respect the standard sales procedure. To get more significant information for our analysis, 
+From the analysis done for the sales process based on both
+classification and log replay results, a new scenario of the sale
+procedure has emerged: orders done by the consolidate clients of the
+organization are not checked from a financial point of view. This fact
+can be accepted as a valid  behavior in a sale procedure, consequently
+an extension of the business process model is needed to include the
+new scenario (\emph{model extension activity}). Alternatively, the
+misbehaving scenario can be considered as an anomaly in the sales
+procedure. In this case, since the analysis provided accurate
+information about the conformance error, corrective measures can be
+taken in order to avoid errors in the subsequent orders.
 
-From the analysis done for the sales process based on both classification and log replay results, a new scenario of the sale procedure has emerged: orders done by the consolidate clients of the organization are not checked from a financial point of view. This fact can be accepted as a possible and reasonable behavior in a sale procedure, consequently an extension of the business process model is needed in order to include the new scenario (\emph{model extension activity}). Alternatively, the new scenario can be considered as an anomaly in the sales procedure. In this case, since the analysis done provides accurate information about the conformance error, corrective measures can be taken in order to avoid errors in the next orders.
-
-The classifier constructed with this approach can be used also in a predictive way. Given a new trace recording a process execution, in order to perform the conformance checking to the process model, the decision tree can be used to predict the conformance result. This bring an advantage in terms of the time required by the analysis since the log replay algorithm takes more time than the one needed by a decision tree to classify a new instance. Moreover, it is worth noting that whenever the set of attributes needed for the classification is known before the completion of a process execution, it can be interesting to predict the conformance result of the execution and avoid the errors that could possibly happen.
+The classifier constructed with this approach can be used also in a
+predictive way. Given a trace recording a process execution the
+decision tree can be used to predict the conformance result. This
+bring an advantage in terms of the time required by the analysis since
+the log replay algorithm takes more time than execution of a decision
+tree. Moreover, it is worth noting that whenever the set of attributes
+needed for the classification is known before the completion of a
+process execution, the non-conformances predicted by the decision tree can
+be used to promptly alert the stakeholders and activate proper
+countermeasures. 
 
 \subsection{Extension of the approach for Performance Analysis}\label{ClassPerf}
 Discovering how data attribute can influence process performance provides useful information in analyzing and optimizing the process services. For example, discovering data patterns in correspondence to which some activities need more time for completion than others, helps in making decisions about resources distribution to the process activities or in scheduling activities. In addition to the completion time, one could analyze a process under more complex performance metrics such as the \emph{synchronization time}. A process with parallel branches and synchronizations can present bottleneck activities that lead to increase the execution time of other activities and consequently the completion time of the entire process. To find out the possible data influences on synchronization time, the approach presented in Section \ref{ClassConformance} for conformance analysis through classification can be easily extended to performance analysis. For example, a classification problem can be formulated for each synchronization point of the process. In this way, the model obtained in correspondence to a synchronization point classifies the process instances based on their attribute value and regarding the synchronization time of the point taken into exam. 
