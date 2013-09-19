@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.2.6)  19 SEP 2013 17:10
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.4.27)  19 SEP 2013 22:25
 entering extended mode
  %&-line parsing enabled.
 **paper2.tex
 (./paper2.tex
 LaTeX2e <2009/09/24>
 Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
-yphenation, italian, loaded.
+yphenation, loaded.
 (./llncs.cls
 Document Class: llncs 2010/07/12 v2.17 
  LaTeX document class for Lecture Notes in Computer Science
@@ -159,7 +159,7 @@ File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 Package color Info: Driver file: pdftex.def on input line 130.
 
 (/usr/share/texmf-texlive/tex/latex/pdftex-def/pdftex.def
-File: pdftex.def 2009/08/25 v0.04m Graphics/color for pdfTeX
+File: pdftex.def 2010/03/12 v0.04p Graphics/color for pdfTeX
 \Gread@gobject=\count116
 ))
 (/usr/share/texmf-texlive/tex/latex/graphics/graphicx.sty
@@ -427,10 +427,10 @@ File: uni-0.def 2004/10/17 UCS: Unicode data U+0000..U+00FF
 ) [11])
 [12] (./paper2.aux) ) 
 Here is how much of TeX's memory you used:
- 2872 strings out of 495052
- 36246 string characters out of 1182207
- 110895 words of memory out of 3000000
- 6016 multiletter control sequences out of 15000+50000
+ 2875 strings out of 495061
+ 36299 string characters out of 1182621
+ 111170 words of memory out of 3000000
+ 6018 multiletter control sequences out of 15000+50000
  9673 words of font info for 35 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
  29i,10n,21p,1574b,611s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -448,7 +448,7 @@ exlive/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-texlive/fonts
 c/amsfonts/cm/cmti10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/
 cm/cmti9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmtt10.pf
 b>
-Output written on paper2.pdf (12 pages, 475297 bytes).
+Output written on paper2.pdf (12 pages, 475265 bytes).
 PDF statistics:
  116 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
