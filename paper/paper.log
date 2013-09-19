@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.2.6)  17 SEP 2013 14:22
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.2.6)  19 SEP 2013 17:10
 entering extended mode
  %&-line parsing enabled.
 **paper.tex
@@ -318,7 +318,7 @@ File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 67.
 
-<./items/logConforme.pdf, id=22, 557.08125pt x 117.43875pt>
+<./items/logConforme.pdf, id=22, 813.0375pt x 106.3975pt>
 File: ./items/logConforme.pdf Graphic file (type pdf)
 
 <use ./items/logConforme.pdf>
@@ -388,7 +388,7 @@ fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1
 onts/cm/cmsy7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti
 10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr
 /share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on paper.pdf (12 pages, 511954 bytes).
+Output written on paper.pdf (12 pages, 528453 bytes).
 PDF statistics:
  118 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

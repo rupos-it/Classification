@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.2.6)  17 SEP 2013 20:11
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.2.6)  19 SEP 2013 17:10
 entering extended mode
  %&-line parsing enabled.
 **paper2.tex
@@ -256,18 +256,18 @@ Package: marginnote 2009/05/06 v1.1d non floating margin notes for LaTeX
 ) (./paper2.aux)
 \openout1 = `paper2.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
 
 (/usr/share/texmf-texlive/tex/latex/ucs/ucsencs.def
 File: ucsencs.def 2003/11/29 Fixes to fontencodings LGR, T3
@@ -287,45 +287,95 @@ File: ucsencs.def 2003/11/29 Fixes to fontencodings LGR, T3
 )
 Package marginnote Info: \pdfoutput not 0 and \pdflastxpos available.
 (marginnote)             Extended position detection mode activated.
- (/usr/share/texmf-texlive/tex/latex/ucs/data/uni-0.def
-File: uni-0.def 2004/10/17 UCS: Unicode data U+0000..U+00FF
-)
-Overfull \hbox (0.34657pt too wide) in paragraph at lines 23--24
-[]\OT1/cmr/m/n/9 Standard pro-cess anal-y-sis tech-niques like con-for-mance ch
-eck-
+
+Overfull \hbox (2.916pt too wide) in paragraph at lines 24--25
+[]\OT1/cmr/m/n/9 Standard pro-cess anal-y-sis tech-niques, like con-for-mance c
+heck-
  []
+
+
+LaTeX Warning: Citation `tan2005introduction' on page 1 undefined on input line
+ 33.
 
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-<./items/Sales_PN.pdf, id=10, 557.08125pt x 211.79124pt>
+
+LaTeX Warning: Citation `DBLP:conf/bpm/AalstDGRVW09' on page 2 undefined on inp
+ut line 38.
+
+
+LaTeX Warning: Citation `DBLP:conf/ifip/Petri62' on page 2 undefined on input l
+ine 41.
+
+
+LaTeX Warning: Citation `DBLP:journals/jcsc/Aalst98' on page 2 undefined on inp
+ut line 41.
+
+
+LaTeX Warning: Citation `BPMN' on page 2 undefined on input line 41.
+
+
+LaTeX Warning: Citation `DBLP:conf/wsfm/BruniCFFGS11' on page 2 undefined on in
+put line 41.
+
+<./items/Sales_PN.pdf, id=11, 557.08125pt x 211.79124pt>
 File: ./items/Sales_PN.pdf Graphic file (type pdf)
 
 <use ./items/Sales_PN.pdf>
-Overfull \hbox (12.87646pt too wide) in paragraph at lines 42--43
+Overfull \hbox (12.87646pt too wide) in paragraph at lines 44--45
 [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[2] [3 <./items/Sales_PN.pdf>]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 86.
 
-(/usr/share/texmf-texlive/tex/latex/base/omscmr.fd
+LaTeX Warning: Citation `DBLP:conf/wsfm/BruniCFFGS11' on page 2 undefined on in
+put line 57.
+
+
+LaTeX Warning: Citation `DBLP:conf/wsfm/BruniCFFGS11' on page 2 undefined on in
+put line 57.
+
+[2]
+
+LaTeX Warning: Citation `DBLP:journals/widm/AalstAD12' on page 3 undefined on i
+nput line 83.
+
+
+LaTeX Warning: Citation `DBLP:journals/is/RozinatA08' on page 3 undefined on in
+put line 83.
+
+
+LaTeX Warning: Citation `DBLP:conf/bpm/Munoz-GamaC10' on page 3 undefined on in
+put line 83.
+
+[3 <./items/Sales_PN.pdf>]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 88.
+ (/usr/share/texmf-texlive/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 86.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 88.
 
 <./items/logConforme.pdf, id=24, 813.0375pt x 106.3975pt>
 File: ./items/logConforme.pdf Graphic file (type pdf)
 
 <use ./items/logConforme.pdf> [4 <./items/logConforme.pdf>]
+
+LaTeX Warning: Citation `tan2005introduction' on page 5 undefined on input line
+ 157.
+
 <./items/classifApproach.pdf, id=34, 557.08125pt x 424.58624pt>
 File: ./items/classifApproach.pdf Graphic file (type pdf)
 
-<use ./items/classifApproach.pdf> [5 <./items/classifApproach.pdf>]
+<use ./items/classifApproach.pdf>
+
+LaTeX Warning: Citation `tan2005introduction' on page 5 undefined on input line
+ 171.
+
+[5 <./items/classifApproach.pdf>]
 <./items/Sales_tree.pdf, id=40, 557.08125pt x 278.03876pt>
 File: ./items/Sales_tree.pdf Graphic file (type pdf)
 
@@ -337,37 +387,70 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 File: ./items/Sales_PN_resultMod.pdf Graphic file (type pdf)
 
 <use ./items/Sales_PN_resultMod.pdf>
-Overfull \hbox (12.87646pt too wide) in paragraph at lines 213--214
+Overfull \hbox (12.87646pt too wide) in paragraph at lines 215--216
 [][] 
  []
 
-[6] [7 <./items/Sales_tree.pdf> <./items/Sales_PN_resultMod.pdf>] [8] [9]
-(./paper2.bbl [10]) [11] (./paper2.aux) ) 
+[6] [7 <./items/Sales_tree.pdf> <./items/Sales_PN_resultMod.pdf>] [8]
+
+LaTeX Warning: Citation `DBLP:conf/bpm/AalstDGRVW09' on page 9 undefined on inp
+ut line 270.
+
+
+LaTeX Warning: Citation `DBLP:journals/sigkdd/HallFHPRW09' on page 9 undefined 
+on input line 270.
+
+[9]
+
+LaTeX Warning: Citation `DBLP:conf/wsfm/BruniCFFGS11' on page 10 undefined on i
+nput line 291.
+
+[10]
+
+LaTeX Warning: Citation `DBLP:conf/bpm/RozinatA06' on page 11 undefined on inpu
+t line 311.
+
+
+LaTeX Warning: Citation `DBLP:conf/sac/LeoniA13' on page 11 undefined on input 
+line 311.
+
+
+LaTeX Warning: Citation `DBLP:conf/sac/LeoniA13' on page 11 undefined on input 
+line 311.
+
+
+LaTeX Warning: Citation `DBLP:conf/bpm/RozinatA06' on page 11 undefined on inpu
+t line 311.
+
+(./paper2.bbl (/usr/share/texmf-texlive/tex/latex/ucs/data/uni-0.def
+File: uni-0.def 2004/10/17 UCS: Unicode data U+0000..U+00FF
+) [11])
+[12] (./paper2.aux) ) 
 Here is how much of TeX's memory you used:
- 2861 strings out of 495052
- 35946 string characters out of 1182207
- 110775 words of memory out of 3000000
- 6005 multiletter control sequences out of 15000+50000
+ 2872 strings out of 495052
+ 36246 string characters out of 1182207
+ 110895 words of memory out of 3000000
+ 6016 multiletter control sequences out of 15000+50000
  9673 words of font info for 35 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
  29i,10n,21p,1574b,611s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/share/texmf-texlive/fonts/type1/
-public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsf
-onts/cm/cmbx12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmb
-x9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
-r/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texm
-f-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fo
-nts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-texlive/fonts/type1/pub
-lic/amsfonts/cm/cmr7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/
-cm/cmr9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb
-></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share
-/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-texli
-ve/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-texlive/fonts/ty
-pe1/public/amsfonts/cm/cmti9.pfb></usr/share/texmf-texlive/fonts/type1/public/a
-msfonts/cm/cmtt10.pfb>
-Output written on paper2.pdf (11 pages, 471053 bytes).
+</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/c
+mbx10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb><
+/usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/t
+exmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texliv
+e/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texmf-texlive/fonts/type
+1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/public/ams
+fonts/cm/cmr6.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr7
+.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/sh
+are/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-t
+exlive/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-texlive/fonts
+/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-texlive/fonts/type1/publi
+c/amsfonts/cm/cmti10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/
+cm/cmti9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmtt10.pf
+b>
+Output written on paper2.pdf (12 pages, 475297 bytes).
 PDF statistics:
- 113 PDF objects out of 1000 (max. 8388607)
+ 116 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
