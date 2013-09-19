@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.4.27)  19 SEP 2013 22:25
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.4.27)  19 SEP 2013 22:31
 entering extended mode
  %&-line parsing enabled.
 **paper2.tex
@@ -373,84 +373,89 @@ File: ./items/classifApproach.pdf Graphic file (type pdf)
 <use ./items/classifApproach.pdf>
 
 LaTeX Warning: Citation `tan2005introduction' on page 5 undefined on input line
- 171.
+ 173.
 
 [5 <./items/classifApproach.pdf>]
-<./items/Sales_tree.pdf, id=40, 557.08125pt x 278.03876pt>
+<./items/Sales_PN_resultMod.pdf, id=40, 557.08125pt x 213.79875pt>
+File: ./items/Sales_PN_resultMod.pdf Graphic file (type pdf)
+
+<use ./items/Sales_PN_resultMod.pdf>
+Overfull \hbox (12.87646pt too wide) in paragraph at lines 222--223
+[][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[6] <./items/Sales_tree.pdf, id=44, 557.08125pt x 278.03876pt>
 File: ./items/Sales_tree.pdf Graphic file (type pdf)
 
 <use ./items/Sales_tree.pdf>
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<./items/Sales_PN_resultMod.pdf, id=41, 557.08125pt x 213.79875pt>
-File: ./items/Sales_PN_resultMod.pdf Graphic file (type pdf)
-
-<use ./items/Sales_PN_resultMod.pdf>
-Overfull \hbox (12.87646pt too wide) in paragraph at lines 215--216
-[][] 
- []
-
-[6] [7 <./items/Sales_tree.pdf> <./items/Sales_PN_resultMod.pdf>] [8]
+[7 <./items/Sales_PN_resultMod.pdf>] [8 <./items/Sales_tree.pdf>]
 
 LaTeX Warning: Citation `DBLP:conf/bpm/AalstDGRVW09' on page 9 undefined on inp
-ut line 270.
+ut line 349.
 
 
 LaTeX Warning: Citation `DBLP:journals/sigkdd/HallFHPRW09' on page 9 undefined 
-on input line 270.
+on input line 349.
 
-[9]
 
-LaTeX Warning: Citation `DBLP:conf/wsfm/BruniCFFGS11' on page 10 undefined on i
-nput line 291.
+LaTeX Warning: Citation `DBLP:conf/wsfm/BruniCFFGS11' on page 9 undefined on in
+put line 370.
 
-[10]
+[9] [10]
 
 LaTeX Warning: Citation `DBLP:conf/bpm/RozinatA06' on page 11 undefined on inpu
-t line 311.
+t line 390.
 
 
 LaTeX Warning: Citation `DBLP:conf/sac/LeoniA13' on page 11 undefined on input 
-line 311.
+line 390.
 
 
 LaTeX Warning: Citation `DBLP:conf/sac/LeoniA13' on page 11 undefined on input 
-line 311.
+line 390.
 
 
 LaTeX Warning: Citation `DBLP:conf/bpm/RozinatA06' on page 11 undefined on inpu
-t line 311.
+t line 390.
 
 (./paper2.bbl (/usr/share/texmf-texlive/tex/latex/ucs/data/uni-0.def
 File: uni-0.def 2004/10/17 UCS: Unicode data U+0000..U+00FF
-) [11])
-[12] (./paper2.aux) ) 
+)) [11]
+(./paper2.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 2875 strings out of 495061
- 36299 string characters out of 1182621
- 111170 words of memory out of 3000000
- 6018 multiletter control sequences out of 15000+50000
+ 2874 strings out of 495061
+ 36295 string characters out of 1182621
+ 111167 words of memory out of 3000000
+ 6017 multiletter control sequences out of 15000+50000
  9673 words of font info for 35 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
  29i,10n,21p,1574b,611s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/c
-mbx10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb><
-/usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/t
-exmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texliv
-e/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texmf-texlive/fonts/type
-1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/public/ams
-fonts/cm/cmr6.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr7
-.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/sh
-are/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-t
-exlive/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-texlive/fonts
-/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-texlive/fonts/type1/publi
-c/amsfonts/cm/cmti10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/
-cm/cmti9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmtt10.pf
-b>
-Output written on paper2.pdf (12 pages, 475265 bytes).
+</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/sha
+re/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-te
+xlive/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texmf-texlive/fonts/
+type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/type1/publi
+c/amsfonts/cm/cmmi9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/c
+m/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr6.pfb><
+/usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/te
+xmf-texlive/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-texlive/f
+onts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/
+public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfo
+nts/cm/cmsy7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti1
+0.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/
+share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on paper2.pdf (11 pages, 473469 bytes).
 PDF statistics:
- 116 PDF objects out of 1000 (max. 8388607)
+ 113 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
