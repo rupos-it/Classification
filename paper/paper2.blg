@@ -1,45 +1,46 @@
-This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
+This is BibTeX, Version 0.99d (TeX Live 2012)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: paper2.aux
 The style file: abbrv.bst
 Database file #1: biblio.bib
 You've used 12 entries,
             2118 wiz_defined-function locations,
-            558 strings with 5325 characters,
-and the built_in function-call counts, 3994 in all, are:
-= -- 368
-> -- 200
-< -- 5
-+ -- 79
-- -- 65
-* -- 258
-:= -- 655
-add.period$ -- 34
+            607 strings with 6845 characters,
+and the built_in function-call counts, 4767 in all, are:
+= -- 449
+> -- 234
+< -- 9
++ -- 91
+- -- 75
+* -- 335
+:= -- 763
+add.period$ -- 40
 call.type$ -- 12
-change.case$ -- 65
+change.case$ -- 66
 chr.to.int$ -- 0
 cite$ -- 12
-duplicate$ -- 155
-empty$ -- 326
-format.name$ -- 65
-if$ -- 856
+duplicate$ -- 196
+empty$ -- 379
+format.name$ -- 75
+if$ -- 1044
 int.to.chr$ -- 0
 int.to.str$ -- 12
-missing$ -- 9
-newline$ -- 59
-num.names$ -- 28
-pop$ -- 93
+missing$ -- 11
+newline$ -- 62
+num.names$ -- 34
+pop$ -- 80
 preamble$ -- 1
-purify$ -- 54
+purify$ -- 56
 quote$ -- 0
-skip$ -- 124
+skip$ -- 152
 stack$ -- 0
-substring$ -- 192
-swap$ -- 44
-text.length$ -- 5
+substring$ -- 257
+swap$ -- 73
+text.length$ -- 9
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 46
 warning$ -- 0
-while$ -- 35
+while$ -- 42
 width$ -- 14
-write$ -- 123
+write$ -- 138
