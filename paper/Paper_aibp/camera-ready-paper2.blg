@@ -1,0 +1,45 @@
+This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
+The top-level auxiliary file: camera-ready-paper2.aux
+The style file: abbrv.bst
+Database file #1: biblio.bib
+You've used 12 entries,
+            2118 wiz_defined-function locations,
+            607 strings with 6871 characters,
+and the built_in function-call counts, 4767 in all, are:
+= -- 449
+> -- 234
+< -- 9
++ -- 91
+- -- 75
+* -- 335
+:= -- 763
+add.period$ -- 40
+call.type$ -- 12
+change.case$ -- 66
+chr.to.int$ -- 0
+cite$ -- 12
+duplicate$ -- 196
+empty$ -- 379
+format.name$ -- 75
+if$ -- 1044
+int.to.chr$ -- 0
+int.to.str$ -- 12
+missing$ -- 11
+newline$ -- 62
+num.names$ -- 34
+pop$ -- 80
+preamble$ -- 1
+purify$ -- 56
+quote$ -- 0
+skip$ -- 152
+stack$ -- 0
+substring$ -- 257
+swap$ -- 73
+text.length$ -- 9
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 46
+warning$ -- 0
+while$ -- 42
+width$ -- 14
+write$ -- 138

@@ -1,0 +1,74 @@
+\begin{thebibliography}{10}
+
+\bibitem{DBLP:conf/wsfm/BruniCFFGS11}
+R.~Bruni, A.~Corradini, G.~L. Ferrari, T.~Flagella, R.~Guanciale, and
+  G.~Spagnolo.
+\newblock Applying process analysis to the {I}talian e-government enterprise
+  architecture.
+\newblock In M.~Carbone and J.-M. Petit, editors, {\em WS-FM}, volume 7176 of
+  {\em Lecture Notes in Computer Science}, pages 111--127. Springer, 2011.
+
+\bibitem{DBLP:conf/sac/LeoniA13}
+M.~de~Leoni and W.~M.~P. van~der Aalst.
+\newblock Data-aware process mining: discovering decisions in processes using
+  alignments.
+\newblock In S.~Y. Shin and J.~C. Maldonado, editors, {\em SAC}, pages
+  1454--1461. ACM, 2013.
+
+\bibitem{DBLP:journals/sigkdd/HallFHPRW09}
+M.~Hall, E.~Frank, G.~Holmes, B.~Pfahringer, P.~Reutemann, and I.~H. Witten.
+\newblock The {WEKA} data mining software: an update.
+\newblock {\em SIGKDD Explorations}, 11(1):10--18, 2009.
+
+\bibitem{DBLP:conf/ecml/Herbst00}
+J.~Herbst.
+\newblock A machine learning approach to workflow management.
+\newblock In R.~L. de~M{\'a}ntaras and E.~Plaza, editors, {\em ECML}, volume
+  1810 of {\em Lecture Notes in Computer Science}, pages 183--194. Springer,
+  2000.
+
+\bibitem{Maruster-PHD}
+L.~Maruster.
+\newblock {\em A machine learning approach to understand business processes}.
+\newblock PhD thesis, Eindhoven University of Technolog, 2003.
+
+\bibitem{BPMN}
+OMG.
+\newblock {Business Process Model and Notation}, \url{http://www.bpmn.org/},
+  2011.
+
+\bibitem{DBLP:conf/ifip/Petri62}
+C.~A. Petri.
+\newblock Fundamentals of a theory of asynchronous information flow.
+\newblock In {\em IFIP Congress}, pages 386--390, 1962.
+
+\bibitem{DBLP:conf/bpm/RozinatA06}
+A.~Rozinat and W.~M.~P. van~der Aalst.
+\newblock Decision mining in {ProM}.
+\newblock In S.~Dustdar, J.~L. Fiadeiro, and A.~P. Sheth, editors, {\em
+  Business Process Management}, volume 4102 of {\em Lecture Notes in Computer
+  Science}, pages 420--425. Springer, 2006.
+
+\bibitem{DBLP:journals/is/RozinatA08}
+A.~Rozinat and W.~M.~P. van~der Aalst.
+\newblock Conformance checking of processes based on monitoring real behavior.
+\newblock {\em Inf. Syst.}, 33(1):64--95, 2008.
+
+\bibitem{tan2005introduction}
+P.-N. Tan, M.~Steinbach, and V.~Kumar.
+\newblock {\em Introduction to Data Mining}.
+\newblock Addison Wesley, May 2005.
+
+\bibitem{DBLP:journals/jcsc/Aalst98}
+W.~M.~P. van~der Aalst.
+\newblock The application of {P}etri nets to workflow management.
+\newblock {\em Journal of Circuits, Systems, and Computers}, 8(1):21--66, 1998.
+
+\bibitem{DBLP:conf/bpm/AalstDGRVW09}
+W.~M.~P. van~der Aalst, B.~F. van Dongen, C.~W. G{\"u}nther, A.~Rozinat,
+  E.~Verbeek, and T.~Weijters.
+\newblock {ProM}: The process mining toolkit.
+\newblock In A.~K.~A. de~Medeiros and B.~Weber, editors, {\em BPM (Demos)},
+  volume 489 of {\em CEUR Workshop Proceedings}. CEUR-WS.org, 2009.
+
+\end{thebibliography}
