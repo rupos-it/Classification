@@ -1,0 +1,8 @@
+\beamer@endinputifotherversion {3.07pt}
+\select@language {english}
+\beamer@sectionintoc {1}{Introduction}{2}{0}{1}
+\beamer@sectionintoc {2}{Running example}{4}{0}{2}
+\beamer@sectionintoc {3}{Process Analysis}{5}{0}{3}
+\beamer@sectionintoc {4}{Machine Learning for Process Analysis}{8}{0}{4}
+\beamer@sectionintoc {5}{Framework for the analysis}{13}{0}{5}
+\beamer@sectionintoc {6}{Conclusion and future works}{15}{0}{6}

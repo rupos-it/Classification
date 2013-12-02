@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.2.6)  9 NOV 2013 18:51
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.2.6)  29 NOV 2013 10:53
 entering extended mode
  %&-line parsing enabled.
 **camera-ready-paper2.tex
@@ -308,7 +308,7 @@ heck-
 File: ./items/Sales_PN.pdf Graphic file (type pdf)
 
 <use ./items/Sales_PN.pdf>
-Overfull \hbox (12.87646pt too wide) in paragraph at lines 43--44
+Overfull \hbox (12.87646pt too wide) in paragraph at lines 42--43
 [][] 
  []
 
@@ -316,13 +316,13 @@ Overfull \hbox (12.87646pt too wide) in paragraph at lines 43--44
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [2] [3 <./items/Sales_PN.pdf>]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 69.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 68.
 
 (/usr/share/texmf-texlive/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 69.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 68.
 
 <./items/logConforme.pdf, id=26, 813.0375pt x 106.3975pt>
 File: ./items/logConforme.pdf Graphic file (type pdf)
@@ -332,7 +332,7 @@ File: ./items/logConforme.pdf Graphic file (type pdf)
 File: ./items/Sales_PN_resultMod.pdf Graphic file (type pdf)
 
 <use ./items/Sales_PN_resultMod.pdf>
-Overfull \hbox (12.87646pt too wide) in paragraph at lines 113--114
+Overfull \hbox (12.87646pt too wide) in paragraph at lines 112--113
 [][] 
  []
 
@@ -344,7 +344,7 @@ ales_tree.pdf>] [8] <./items/dataflow.pdf, id=56, 557.08125pt x 251.94125pt>
 File: ./items/dataflow.pdf Graphic file (type pdf)
 
 <use ./items/dataflow.pdf>
-Overfull \hbox (12.87646pt too wide) in paragraph at lines 229--230
+Overfull \hbox (12.87646pt too wide) in paragraph at lines 228--229
 [][] 
  []
 
@@ -356,12 +356,12 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
  )
 (\end occurred inside a group at level 1)
 
-### simple group (level 1) entered at line 125 ({)
+### simple group (level 1) entered at line 124 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
  2376 strings out of 495052
  31280 string characters out of 1182207
- 107924 words of memory out of 3000000
+ 107920 words of memory out of 3000000
  5520 multiletter control sequences out of 15000+50000
  9840 words of font info for 36 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
@@ -381,7 +381,7 @@ fonts/cm/cmsy9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmt
 i10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti9.pfb></us
 r/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/tex
 mf-texlive/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on camera-ready-paper2.pdf (10 pages, 509958 bytes).
+Output written on camera-ready-paper2.pdf (10 pages, 509861 bytes).
 PDF statistics:
  118 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
